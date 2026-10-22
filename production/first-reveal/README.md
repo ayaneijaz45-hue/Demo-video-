@@ -1,6 +1,6 @@
 # Models Suite: The First Reveal
 
-**Current milestone:** [Audio review v1 is complete and awaiting user listening approval](AUDIO-REVIEW-STATUS.md). Actual sources are present privately; active cues and phrase edits are recorded in `audio-integration.json`. The older preparation/visual status below is historical. Final video export remains unapproved.
+**Current milestone:** [The user-approved soundtrack has been integrated into the verified final MP4](FINAL-PRODUCTION-REPORT.md). The exact approved WAV checksum is pinned in `audio-integration.json`; private audio remains outside public Git. Earlier preparation, visual-proof and review status below is historical.
 
 **Phase 5 audio handoff:** see [AUDIO-INTEGRATION-READINESS.md](AUDIO-INTEGRATION-READINESS.md) and `audio-integration.json`. The active cue sheet has been consolidated to 14 positions; the original 35-event sheet is preserved under `archive/`. Historical Phase 4 status below describes the visual proof milestone. Narration is now independently reported at 29.649 seconds, but the actual file is still awaited here. Final audio work uses the new manual `first-reveal-audio.yml` workflow.
 

@@ -1,5 +1,7 @@
 # Phase 5 — audio review v1, listening approval pending
 
+**Historical review record.** The user subsequently approved this exact WAV and authorized final export. See [FINAL-PRODUCTION-REPORT.md](FINAL-PRODUCTION-REPORT.md) for the completed master and verification. The measurements and edit decisions below describe the approved review unchanged.
+
 The 30-second stereo audio review is complete and saved privately for the user. No final video has been rendered. The approved seven-scene composition, original 60-second film, image assets and existing visual workflows are unchanged.
 
 ## Actual source intake

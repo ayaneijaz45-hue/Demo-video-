@@ -1,5 +1,5 @@
 {
-  "status": "AUDIO_REVIEW_V1_AWAITING_USER_APPROVAL",
+  "status": "FINAL_MASTER_EXPORTED_AND_VERIFIED",
   "narration": {
     "path": null,
     "reportedApproximateSeconds": 29.6,
@@ -21,10 +21,11 @@
     "approved": false
   },
   "approvedMix": {
-    "path": null,
-    "approved": false
+    "path": "mix/approved-stereo.wav",
+    "approved": true,
+    "sha256": "10d65ad9480b41bde4032a1913ac8ce3f50520112a1d51b1d8dced30ce4ec919"
   },
-  "finalExportApproved": false,
+  "finalExportApproved": true,
   "rules": [
     "Do not reuse the previous synthesized score or effects",
     "Do not alter narration playback speed",
@@ -32,5 +33,6 @@
     "No paid generation or acquisition without user authorization",
     "Do not export an audio-integrated master while assets or rights are missing"
   ],
-  "activeIntegrationManifest": "production/first-reveal/audio-integration.json"
+  "activeIntegrationManifest": "production/first-reveal/audio-integration.json",
+  "activeProductionReport": "production/first-reveal/FINAL-PRODUCTION-REPORT.md"
 }

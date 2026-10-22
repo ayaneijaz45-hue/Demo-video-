@@ -1,6 +1,6 @@
 # Phase 5 — professional audio integration readiness
 
-**Historical preparation report.** The sources have since arrived and audio review v1 is complete. See [AUDIO-REVIEW-STATUS.md](AUDIO-REVIEW-STATUS.md) for actual processing, timing choices and measured results. User listening approval and final video export remain pending.
+**Historical preparation report.** The sources arrived, the user approved audio review v1, and final export is complete. See [FINAL-PRODUCTION-REPORT.md](FINAL-PRODUCTION-REPORT.md) for delivery verification and [AUDIO-REVIEW-STATUS.md](AUDIO-REVIEW-STATUS.md) for the unchanged approved mix/edit record.
 
 The approved `ModelsSuiteFirstReveal` visuals are preserved. This phase prepares audio intake, editing, mixing and a future manual cloud master. It does not generate replacement audio, change animations, or export any media.
 
