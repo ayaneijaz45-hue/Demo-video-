@@ -20,8 +20,8 @@ export const CreationMorph = () => {
   const voice = k(t, 4.8, 5.8);
   const end = lin(t, 6.75, 7);
   const width = 720 + video * 220;
-  const height = 900 - video * 230;
-  const artTop = 500 + video * 95;
+  const height = 820 - video * 150;
+  const artTop = 600 + video * 80;
   return (
     <Base
       style={{

@@ -6,7 +6,7 @@ Separate 30-second composition: **ModelsSuiteFirstReveal**. The complete origina
 
 The previous film repeated a left-aligned headline above a framed product panel. Most scenes completed a single entrance and held; chapter changes reused the same cyan wipe. Depth came largely from box shadows and shallow CSS perspective. Creation switched between labels around a simple vector stand-in. The soundtrack was rejected and is not referenced anywhere in this composition.
 
-This film uses an immediate typographic opening; a radial tab convergence; an actual lit 3D brand object with moving environment reflections; model-family typography that resolves into routing; winner selection followed by a camera push; and original glass-flower art that changes image/motion framing and breaks into waveform slices. Cuts use the subject and material as continuity rather than a repeated full-screen wipe. The clean PKR chapter changes light and scale, then a circular material closure introduces the final object.
+This film uses an immediate typographic opening; a radial tab convergence; an actual lit 3D extrusion of the authentic logo silhouette with moving environment reflections; model-family typography that resolves into routing; winner selection followed by a camera push; and original glass-flower art that changes image/motion framing and breaks into waveform slices. Cuts use the subject and material as continuity rather than a repeated full-screen wipe. The clean PKR chapter changes light and scale, then a circular material closure introduces the final object.
 
 ## Timeline
 
@@ -24,7 +24,7 @@ Every animation derives from frame / fps, including Three.js camera and lighting
 
 ## Resource strategy
 
-Actual 3D is confined to the brand and finale. It uses one 96-segment puck, simple lights, a small procedural environment texture, no ray tracing, no transmission pass, no paid GPU, and DPR 1. Short temporal trails are confined to fast tab motion. Remaining choreography uses DOM, SVG and original raster artwork. Cloud proofs use one Chromium worker and software GL on the public standard Ubuntu runner.
+Actual 3D is confined to the brand and finale. It uses the five authentic alpha-derived logo components with modest bevels, simple lights, a small procedural environment texture, no ray tracing, no transmission pass, no paid GPU, and DPR 1. Short temporal trails are confined to fast tab motion. Remaining choreography uses DOM, SVG and original raster artwork. Cloud proofs use one Chromium worker and software GL on the public standard Ubuntu runner.
 
 ## Product truth and assets
 

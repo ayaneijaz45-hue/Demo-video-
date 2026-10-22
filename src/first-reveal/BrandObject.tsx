@@ -4,6 +4,7 @@ import { useLoader, useThree } from "@react-three/fiber";
 import { staticFile } from "remotion";
 import * as THREE from "three";
 import { k, useTime } from "./design";
+import { logoContours } from "./logoContours";
 
 const Camera = ({ t, finale }: { t: number; finale: boolean }) => {
   const camera = useThree((s) => s.camera);
@@ -16,11 +17,38 @@ const Camera = ({ t, finale }: { t: number; finale: boolean }) => {
   camera.updateProjectionMatrix();
   return null;
 };
-const Coin = ({ t }: { t: number }) => {
+const BrandSculpture = ({ t }: { t: number }) => {
   const logo = useLoader(
     THREE.TextureLoader,
     staticFile("brand/models-suite-logo.png"),
   );
+  const geometry = useMemo(() => {
+    const shapes = logoContours.outers.map((points) => {
+      const shape = new THREE.Shape();
+      points.forEach(([x, y], i) =>
+        i === 0 ? shape.moveTo(x, y) : shape.lineTo(x, y),
+      );
+      shape.closePath();
+      return shape;
+    });
+    const geo = new THREE.ExtrudeGeometry(shapes, {
+      depth: 0.2,
+      bevelEnabled: true,
+      bevelThickness: 0.075,
+      bevelSize: 0.045,
+      bevelSegments: 3,
+      curveSegments: 8,
+    });
+    geo.translate(0, 0, -0.1);
+    const pos = geo.attributes.position;
+    const uv = new Float32Array(pos.count * 2);
+    for (let i = 0; i < pos.count; i++) {
+      uv[i * 2] = pos.getX(i) / logoContours.width + 0.5;
+      uv[i * 2 + 1] = pos.getY(i) / logoContours.height + 0.5;
+    }
+    geo.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+    return geo;
+  }, []);
   const env = useMemo(() => {
     const w = 256,
       h = 128,
@@ -51,45 +79,24 @@ const Coin = ({ t }: { t: number }) => {
   ];
   return (
     <group rotation={rotation}>
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[1.57, 1.57, 0.25, 96]} />
+      <mesh geometry={geometry}>
         <meshStandardMaterial
-          color="#91BED8"
-          envMap={env}
-          envMapIntensity={2.3}
-          metalness={0.96}
-          roughness={0.19}
-        />
-      </mesh>
-      <mesh position={[0, 0, 0.13]}>
-        <circleGeometry args={[1.49, 96]} />
-        <meshStandardMaterial
-          color="#D9F0FC"
-          metalness={0.24}
-          roughness={0.27}
-          envMap={env}
-        />
-      </mesh>
-      <mesh position={[0, 0, 0.141]}>
-        <planeGeometry args={[2.25, 2.25]} />
-        <meshBasicMaterial
+          attach="material-0"
           map={logo}
-          transparent
-          alphaTest={0.01}
-          toneMapped={false}
-        />
-      </mesh>
-      <mesh position={[0, 0, 0.11]}>
-        <torusGeometry args={[1.55, 0.018, 8, 96]} />
-        <meshBasicMaterial color="#7EE7FF" />
-      </mesh>
-      <mesh position={[0, 0, -0.14]}>
-        <circleGeometry args={[1.49, 96]} />
-        <meshStandardMaterial
-          color="#152B45"
-          metalness={0.9}
-          roughness={0.25}
+          alphaTest={0.1}
+          color="white"
+          metalness={0.22}
+          roughness={0.22}
           envMap={env}
+          envMapIntensity={1.2}
+        />
+        <meshStandardMaterial
+          attach="material-1"
+          color="#3EABD7"
+          metalness={0.92}
+          roughness={0.15}
+          envMap={env}
+          envMapIntensity={3}
         />
       </mesh>
     </group>
@@ -112,7 +119,7 @@ export const BrandObject = ({ finale = false }: { finale?: boolean }) => {
       <directionalLight position={[3, 4, 6]} color="#F5F8FB" intensity={4} />
       <directionalLight position={[-4, 1, 1]} color="#7EE7FF" intensity={3.2} />
       <pointLight position={[1, -1, 3]} color="#8FA7FF" intensity={18} />
-      <Coin t={t} />
+      <BrandSculpture t={t} />
     </ThreeCanvas>
   );
 };

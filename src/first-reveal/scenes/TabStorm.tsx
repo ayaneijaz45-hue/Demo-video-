@@ -11,9 +11,14 @@ import {
   useTime,
 } from "../design";
 
+const convergence = (t: number) => {
+  const p = lin(t, 1.5, 2.8);
+  return p * p * (3 - 2 * p);
+};
+
 const Windows = () => {
   const t = useTime();
-  const pull = k(t, 1.5, 2.85);
+  const pull = convergence(t);
   const turn = k(t, 1.35, 2.9, 0, -25);
   return (
     <div
@@ -73,7 +78,7 @@ const Windows = () => {
 };
 export const TabStorm = () => {
   const t = useTime();
-  const pull = k(t, 1.5, 2.85);
+  const pull = convergence(t);
   return (
     <Base>
       <div
@@ -90,6 +95,7 @@ export const TabStorm = () => {
           position: "absolute",
           left: 65,
           top: 290,
+          zIndex: 5,
           fontSize: 159,
           fontWeight: 650,
           lineHeight: 1,

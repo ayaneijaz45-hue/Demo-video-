@@ -48,6 +48,36 @@ if (mode === "proof") {
       "--gl=swangle",
       "--timeout=120000",
     ]);
+} else if (mode === "refine") {
+  for (const [name, a, b] of [
+    ["01-tab-storm", 0, 89],
+    ["02-brand-object", 90, 134],
+    ["04-creation-morph", 450, 659],
+  ])
+    run([
+      "render",
+      ...base,
+      `out/first-reveal/${name}-SILENT.mp4`,
+      `--frames=${a}-${b}`,
+      ...opts,
+    ]);
+  for (const frame of [12, 60, 135, 510, 570, 630, 855])
+    run([
+      "still",
+      ...base,
+      `out/first-reveal/frame-${frame}.png`,
+      `--frame=${frame}`,
+      "--gl=swangle",
+      "--timeout=120000",
+    ]);
+  run([
+    "render",
+    ...base,
+    "out/first-reveal/brand-60fps-SILENT.mp4",
+    "--frames=204-263",
+    '--props={"targetFps":60,"narrationFile":null,"musicFile":null,"sfxFile":null}',
+    ...opts,
+  ]);
 } else if (mode === "proof60") {
   run([
     "render",
