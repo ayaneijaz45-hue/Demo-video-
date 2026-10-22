@@ -1,0 +1,8 @@
+{
+  "status": "AWAITING_ACTUAL_NARRATION",
+  "durationSecondsIndependentlyReported": 29.649,
+  "offsetSeconds": 0,
+  "playbackRate": 1,
+  "phrases": [],
+  "instructions": "Fill actual phrase text, startSeconds, endSeconds, and corresponding scene after listening to original MP3. No guessed word timestamps. Report conflicts with approved scene windows before any visual or speech edit."
+}

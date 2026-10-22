@@ -1,0 +1,82 @@
+name: First Reveal — audio readiness and gated master
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Preflight never generates media; other modes require supplied assets and review flags
+        type: choice
+        options: [preflight, mix-review, master]
+        default: preflight
+        required: true
+      confirmation:
+        description: For a later approved master only, type MASTER_APPROVED
+        type: string
+        default: ''
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: first-reveal-audio
+  cancel-in-progress: false
+jobs:
+  audio:
+    if: github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      AUDIO_MODE: ${{ inputs.mode }}
+      FINAL_EXPORT_CONFIRMATION: ${{ inputs.confirmation }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run verify
+      - name: Import approved assets if a bundle has been configured
+        env:
+          FIRST_REVEAL_AUDIO_BUNDLE_URL: ${{ secrets.FIRST_REVEAL_AUDIO_BUNDLE_URL }}
+        run: python3 scripts/fetch-first-reveal-audio.py
+      - name: Configuration and asset readiness — no media generated
+        run: node scripts/first-reveal-audio.mjs preflight
+      - name: Verify FFmpeg tools for future audio work
+        if: inputs.mode != 'preflight'
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends ffmpeg
+          fi
+          ffmpeg -version
+      - name: Ensure browser only for a later full master
+        if: inputs.mode == 'master'
+        run: npx --no-install remotion browser ensure
+      - name: Explicitly requested cloud audio mode
+        if: inputs.mode != 'preflight'
+        run: node scripts/first-reveal-audio.mjs "$AUDIO_MODE"
+      - name: Save readiness and technical reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: first-reveal-audio-reports-${{ github.run_id }}
+          path: out/first-reveal-audio/*.json
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Save requested draft audio review
+        if: success() && inputs.mode == 'mix-review'
+        uses: actions/upload-artifact@v4
+        with:
+          name: first-reveal-DRAFT-mix-${{ github.run_id }}
+          path: out/first-reveal-audio/FirstReveal-DRAFT-mix-review.wav
+          retention-days: 7
+          if-no-files-found: error
+      - name: Save technically checked master only
+        if: success() && inputs.mode == 'master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ModelsSuiteFirstReveal-MASTER-${{ github.run_id }}
+          path: out/first-reveal-audio/ModelsSuiteFirstReveal-MASTER.mp4
+          retention-days: 7
+          if-no-files-found: error

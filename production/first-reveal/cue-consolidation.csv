@@ -1,0 +1,36 @@
+phase4_original_event_number,phase5_group,decision
+1,A01,OMIT title impact; chosen music supplies initial weight
+2,A01,OMIT first tab tap
+3,A01,RETAIN one tab tick at 0.43 s
+4,A01,OMIT third tab tap
+5,A01,OMIT fourth tab tap
+6,A02,COMBINE convergence with magnetic resolve into one air gesture
+7,A02,COMBINE into convergence gesture
+8,A03,COMBINE warm signature with light sheen
+9,A03,COMBINE into brand signature
+10,A04,OMIT lens pass
+11,A04,OMIT separate downbeat effect; music supplies pulse
+12,A04,OMIT model-collection ticks
+13,A04,"OPTIONAL routing air, disabled by default"
+15,A04,OMIT confirmation melody
+14,A05,RETAIN one Auto Best click
+16,A06,"OPTIONAL comparison split, disabled by default"
+17,A06,OMIT response text effects
+18,A07,RETAIN winner accent
+19,A07,COMBINE winner lift into the single selection gesture
+20,A08,RETAIN one transfer gesture
+21,A08,OMIT submit click
+22,A09,RETAIN material bloom
+23,A10,"OPTIONAL format expansion, disabled by default"
+24,A10,OMIT playback tap
+25,A11,RETAIN one morph gesture
+26,A12,RETAIN wallet material transition
+27,A12,OMIT rupee landing
+29,A12,OMIT wallet drawer sound
+28,A13,RETAIN understated equation accent
+30,A14,COMBINE transition closure into final signature at 26 s
+31,A14,RETAIN final logo signature
+32,A14,COMBINE sheen into the signature
+33,A14,OMIT tagline punctuation
+34,A14,OMIT CTA click
+35,A14,"NO NEW SFX; music fade only, preserve narration"

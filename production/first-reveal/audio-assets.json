@@ -1,9 +1,35 @@
 {
-  "status": "AWAITING_EXTERNAL_AUDIO",
-  "narration": {"path": null, "reportedApproximateSeconds": 29.6, "measuredSeconds": null, "timingInspected": false, "source": "User reports a Runway-generated MP3; not attached yet"},
-  "music": {"path": null, "licenseEvidence": null, "approved": false},
-  "sfxStem": {"path": null, "licenseEvidence": null, "approved": false},
-  "approvedMix": {"path": null, "approved": false},
+  "status": "PHASE5_PREPARED_AWAITING_APPROVED_ASSETS",
+  "narration": {
+    "path": null,
+    "reportedApproximateSeconds": 29.6,
+    "measuredSeconds": null,
+    "timingInspected": false,
+    "source": "Runway original backed up in Descript; original MP3 not supplied here",
+    "independentlyMeasuredSeconds": 29.649,
+    "measurementSource": "User reports independent measurement; not file-inspected here"
+  },
+  "music": {
+    "path": null,
+    "licenseEvidence": null,
+    "approved": false
+  },
+  "sfxStem": {
+    "path": null,
+    "licenseEvidence": null,
+    "approved": false
+  },
+  "approvedMix": {
+    "path": null,
+    "approved": false
+  },
   "finalExportApproved": false,
-  "rules": ["Do not reuse the previous synthesized score or effects", "Do not alter narration playback speed", "Inspect actual MP3 timing before final synchronization", "No paid generation or acquisition without user authorization", "Do not export an audio-integrated master while assets or rights are missing"]
+  "rules": [
+    "Do not reuse the previous synthesized score or effects",
+    "Do not alter narration playback speed",
+    "Inspect actual MP3 timing before final synchronization",
+    "No paid generation or acquisition without user authorization",
+    "Do not export an audio-integrated master while assets or rights are missing"
+  ],
+  "activeIntegrationManifest": "production/first-reveal/audio-integration.json"
 }

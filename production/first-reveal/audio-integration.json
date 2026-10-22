@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "composition": "ModelsSuiteFirstReveal",
+  "durationSeconds": 30,
+  "fps": 30,
+  "cloudBundleSha256": null,
+  "narration": {
+    "path": "narration/runway-original.mp3",
+    "independentlyMeasuredSeconds": 29.649,
+    "measurementSource": "User reports independent measurement; original backed up in Descript",
+    "fileInspectedHere": false,
+    "playbackRate": 1,
+    "offsetSeconds": 0,
+    "gainDb": 0
+  },
+  "music": {
+    "path": "music/cinematic.wav",
+    "trimStartSeconds": null,
+    "gainDb": -20,
+    "loop": false
+  },
+  "sfx": {
+    "ui": {
+      "path": "sfx/ui-detail.wav",
+      "gainDb": 0
+    },
+    "air": {
+      "path": "sfx/airy-resolve.wav",
+      "gainDb": 0
+    },
+    "impact": {
+      "path": "sfx/soft-impact.wav",
+      "gainDb": 0
+    },
+    "bloom": {
+      "path": "sfx/material-bloom.wav",
+      "gainDb": 0
+    },
+    "morph": {
+      "path": "sfx/morph-texture.wav",
+      "gainDb": 0
+    },
+    "logo": {
+      "path": "sfx/logo-signature.wav",
+      "gainDb": 0
+    }
+  },
+  "approvedMix": {
+    "path": "mix/approved-stereo.wav",
+    "sha256": null,
+    "source": null
+  },
+  "review": {
+    "visualsApproved": true,
+    "narrationTimingReviewed": false,
+    "cueTimingReviewed": false,
+    "rightsApproved": false,
+    "finalExportApproved": false
+  },
+  "cues": [
+    {
+      "id": "A01",
+      "startSeconds": 0.43,
+      "endSeconds": 0.65,
+      "asset": "ui",
+      "gainDb": -22,
+      "enabled": true
+    },
+    {
+      "id": "A02",
+      "startSeconds": 1.5,
+      "endSeconds": 2.95,
+      "asset": "air",
+      "gainDb": -18,
+      "enabled": true
+    },
+    {
+      "id": "A03",
+      "startSeconds": 3.02,
+      "endSeconds": 4.2,
+      "asset": "logo",
+      "gainDb": -17,
+      "enabled": true
+    },
+    {
+      "id": "A04",
+      "startSeconds": 8.2,
+      "endSeconds": 9.3,
+      "asset": "air",
+      "gainDb": -28,
+      "enabled": false
+    },
+    {
+      "id": "A05",
+      "startSeconds": 8.9,
+      "endSeconds": 9.05,
+      "asset": "ui",
+      "gainDb": -22,
+      "enabled": true
+    },
+    {
+      "id": "A06",
+      "startSeconds": 10.85,
+      "endSeconds": 11.15,
+      "asset": "air",
+      "gainDb": -27,
+      "enabled": false
+    },
+    {
+      "id": "A07",
+      "startSeconds": 13.3,
+      "endSeconds": 14.1,
+      "asset": "ui",
+      "gainDb": -20,
+      "enabled": true
+    },
+    {
+      "id": "A08",
+      "startSeconds": 14.5,
+      "endSeconds": 15.2,
+      "asset": "air",
+      "gainDb": -20,
+      "enabled": true
+    },
+    {
+      "id": "A09",
+      "startSeconds": 16.25,
+      "endSeconds": 16.8,
+      "asset": "bloom",
+      "gainDb": -22,
+      "enabled": true
+    },
+    {
+      "id": "A10",
+      "startSeconds": 17.8,
+      "endSeconds": 18.3,
+      "asset": "air",
+      "gainDb": -28,
+      "enabled": false
+    },
+    {
+      "id": "A11",
+      "startSeconds": 19.8,
+      "endSeconds": 20.8,
+      "asset": "morph",
+      "gainDb": -24,
+      "enabled": true
+    },
+    {
+      "id": "A12",
+      "startSeconds": 21.75,
+      "endSeconds": 22.1,
+      "asset": "air",
+      "gainDb": -22,
+      "enabled": true
+    },
+    {
+      "id": "A13",
+      "startSeconds": 23.3,
+      "endSeconds": 23.55,
+      "asset": "impact",
+      "gainDb": -24,
+      "enabled": true
+    },
+    {
+      "id": "A14",
+      "startSeconds": 26,
+      "endSeconds": 27.3,
+      "asset": "logo",
+      "gainDb": -16,
+      "enabled": true
+    }
+  ],
+  "policy": {
+    "oldSyntheticScoreAllowed": false,
+    "automaticSpeechSpeedChanges": false,
+    "sourceMediaInPublicGit": false,
+    "masterUsesApprovedMixOnly": true,
+    "loudnessTargetLUFS": -16,
+    "approvedMixTruePeakCeilingDbTP": -1.5,
+    "encodedTruePeakCeilingDbTP": -1.0
+  }
+}

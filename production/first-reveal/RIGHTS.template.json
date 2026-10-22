@@ -1,0 +1,53 @@
+{
+  "instructions": "Fill actual source, license/order or terms evidence reference, and permitted use for every supplied asset; do not store private invoices in public Git. No rights are presumed.",
+  "assets": {
+    "narration": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "music": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "ui": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "air": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "impact": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "bloom": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "morph": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    },
+    "logo": {
+      "source": null,
+      "evidence": null,
+      "promotionalUseApproved": false,
+      "paidAdvertisingUseApproved": false
+    }
+  }
+}

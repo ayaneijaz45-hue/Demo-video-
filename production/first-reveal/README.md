@@ -1,5 +1,7 @@
 # Models Suite: The First Reveal
 
+**Phase 5 audio handoff:** see [AUDIO-INTEGRATION-READINESS.md](AUDIO-INTEGRATION-READINESS.md) and `audio-integration.json`. The active cue sheet has been consolidated to 14 positions; the original 35-event sheet is preserved under `archive/`. Historical Phase 4 status below describes the visual proof milestone. Narration is now independently reported at 29.649 seconds, but the actual file is still awaited here. Final audio work uses the new manual `first-reveal-audio.yml` workflow.
+
 Separate 30-second composition: **ModelsSuiteFirstReveal**. The complete original ModelsSuite 60-second composition, scene files, audio files and existing workflows are preserved. The new work lives under src/first-reveal/, public/first-reveal/, and production/first-reveal/.
 
 ## Specific weaknesses addressed
