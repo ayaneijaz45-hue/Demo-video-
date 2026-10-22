@@ -5,7 +5,7 @@
   "language": "English",
   "direction": "Calm, assured, conversational. Human warmth; no exaggerated announcer delivery. Leave each reserved gap intact.",
   "cues": [
-    {"scene":"Hook","start":0.7,"end":3.4,"script":"Too many AI tools? Bring your ideas together."},
+    {"scene":"Hook","start":0.7,"end":3.4,"script":"Too many AI tools?"},
     {"scene":"Reveal","start":6.0,"end":9.8,"script":"Meet Models Suite. Your connected AI workspace."},
     {"scene":"Intelligence","start":13.0,"end":18.3,"script":"Choose a leading model. Or let Auto Best route your next task."},
     {"scene":"Model Battle","start":20.8,"end":26.7,"script":"One prompt. Different perspectives. Compare the answers, and choose your favorite."},
