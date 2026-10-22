@@ -22,11 +22,8 @@ const run = (args) => {
   const r = spawnSync(process.execPath, [cli, ...args], { stdio: "inherit" });
   assert.equal(r.status, 0, args.join(" "));
 };
-// Remotion's compact FFmpeg intentionally omits review/analysis filters.
-const ffmpeg = (args) => {
-  const result = spawnSync('ffmpeg', ['-y', ...args], {stdio: 'inherit'});
-  assert.equal(result.status, 0, `ffmpeg ${args.join(' ')}`);
-};
+// Use only filters provided by Remotion's bundled FFmpeg. No system install needed.
+const ffmpeg = (args) => run(['ffmpeg', '-y', ...args]);
 const started = Date.now();
 const common = [
   "--concurrency=2",
@@ -99,29 +96,20 @@ if (mode === "proof") {
     "60",
     "out/Models-Suite-60s-visual-preview.mp4",
   ]);
-  // Decode one frame from every two seconds for actual-output review, entirely on the runner.
-  ffmpeg([
-    "-i",
-    "out/Models-Suite-60s-visual-preview.mp4",
-    "-vf",
-    "fps=1/2,scale=270:480,tile=6x5",
-    "-frames:v",
-    "1",
-    "out/filmstrip.jpg",
-  ]);
-  ffmpeg([
-    "-i",
-    "out/Models-Suite-60s-visual-preview.mp4",
-    "-af",
-    "ebur128=peak=true",
-    "-vn",
-    "-f",
-    "null",
-    "-",
-  ]);
+  // Decode at two-second intervals on the runner. The compact build supports scale
+  // and single-frame extraction, but intentionally omits fps/tile/ebur128.
+  for (let second = 0; second < 60; second += 2) {
+    ffmpeg([
+      '-ss', String(second), '-i', 'out/Models-Suite-60s-visual-preview.mp4',
+      '-vf', 'scale=270:480', '-frames:v', '1',
+      `out/review-${String(second).padStart(2,'0')}s.png`,
+    ]);
+  }
   const probe = spawnSync(
-    "ffprobe",
+    process.execPath,
     [
+      cli,
+      'ffprobe',
       "-v",
       "error",
       "-show_streams",
