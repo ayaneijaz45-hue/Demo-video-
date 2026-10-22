@@ -1,0 +1,27 @@
+{
+  "name": "demo-video-infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Phase 1 Remotion infrastructure; no video compositions yet",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "remotion studio src/index.ts --no-open",
+    "typecheck": "tsc --noEmit",
+    "verify:versions": "remotion versions",
+    "verify": "npm run typecheck && npm run verify:versions",
+    "bundle": "remotion bundle src/index.ts",
+    "verify:cloud": "node scripts/verify-cloud.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/renderer": "4.0.537",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}

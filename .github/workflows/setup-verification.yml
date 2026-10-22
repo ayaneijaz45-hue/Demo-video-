@@ -1,0 +1,39 @@
+name: Phase 1 setup verification (no video)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Check TypeScript and matching Remotion versions
+        run: npm run verify
+      - name: Compile the project without rendering
+        run: npm run bundle
+      - name: Install Chrome Headless Shell
+        run: npx --no-install remotion browser ensure
+      - name: Check the bundled FFmpeg executable (no encoding)
+        run: npx --no-install remotion ffmpeg -version
+      - name: Check Ubuntu resources and empty browser launch
+        run: npm run verify:cloud
+      - name: Upload the environment report (no media)
+        uses: actions/upload-artifact@v4
+        with:
+          name: setup-verification-${{ github.run_id }}
+          path: verification/environment.json
+          if-no-files-found: error
+          retention-days: 1

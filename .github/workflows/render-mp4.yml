@@ -1,0 +1,49 @@
+name: Future MP4 render (Phase 2 only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      phase2_confirm:
+        description: Enable only after Phase 2 authorizes rendering and adds a composition
+        type: boolean
+        required: true
+        default: false
+      composition_id:
+        description: Exact ID of a composition added in Phase 2
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    if: inputs.phase2_confirm && github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run verify
+      - run: npx --no-install remotion browser ensure
+      - name: Render the future composition on GitHub only
+        env:
+          COMPOSITION_ID: ${{ inputs.composition_id }}
+        run: |
+          if [[ ! "$COMPOSITION_ID" =~ ^[A-Za-z0-9][A-Za-z0-9_-]*$ ]]; then
+            echo "A valid composition ID is required."
+            exit 1
+          fi
+          npx --no-install remotion render src/index.ts "$COMPOSITION_ID" out/video.mp4 --codec=h264 --concurrency=2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mp4-${{ github.run_id }}
+          path: out/video.mp4
+          if-no-files-found: error
+          retention-days: 1
