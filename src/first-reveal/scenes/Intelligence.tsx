@@ -24,7 +24,7 @@ export const IntelligenceReveal = () => {
     <Base>
       <Brow style={{ top: 130, left: 74 }}>INTELLIGENCE, CONNECTED</Brow>
       <div style={{ position: "absolute", left: 68, top: 250 }}>
-        <Word t={t} at={0} size={142}>
+        <Word t={t} at={0} size={142} style={{ lineHeight: 1.12 }}>
           Leading AI.
         </Word>
         <Word t={t} at={0.12} size={99} color={P.cyan}>
@@ -161,7 +161,7 @@ export const IntelligenceReveal = () => {
         {[210, 435, 660, 885].map((x, i) => (
           <path
             key={x}
-            d={`M${x} 660 C${x} 790 600 780 600 1138`}
+            d={`M${x} 660 C${x} 790 310 800 310 1100`}
             fill="none"
             stroke={i % 2 ? P.violet : P.cyan}
             strokeWidth="2.5"
@@ -175,8 +175,8 @@ export const IntelligenceReveal = () => {
       </svg>
       {t > 2.1 && t < 3.7 ? (
         <Cursor
-          x={k(t, 2.1, 2.85, 940, 440)}
-          y={k(t, 2.1, 2.85, 1400, 1135)}
+          x={k(t, 2.1, 2.85, 940, 315)}
+          y={k(t, 2.1, 2.85, 1400, 1105)}
           click={Math.sin(lin(t, 2.9, 3.3) * Math.PI)}
         />
       ) : null}

@@ -24,10 +24,10 @@ export const FirstFinale = () => {
           textAlign: "center",
         }}
       >
-        <Word t={t} at={0.15} size={74}>
+        <Word t={t} at={0.15} size={74} style={{ lineHeight: 1.12 }}>
           Every Leading AI.
         </Word>
-        <Word t={t} at={0.28} size={88} color={P.cyan}>
+        <Word t={t} at={0.28} size={88} color={P.cyan} style={{ lineHeight: 1.12 }}>
           One PKR Wallet.
         </Word>
       </div>

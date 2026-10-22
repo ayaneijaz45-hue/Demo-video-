@@ -310,7 +310,11 @@
       }
     }
   },
-  "cloudApprovedMixTransfer": null,
+  "cloudApprovedMixTransfer": {
+    "format": "FRM1-AES-256-GCM",
+    "assetId": 666358949,
+    "encryptedSha256": "f4b8adfca96bec21003376fd30ea0f8c89f8e5c899a78eb1900a4557d1284e1b"
+  },
   "delivery": {
     "status": "FINAL_MASTER_EXPORTED_AND_VERIFIED",
     "renderRunId": "39786555172",
