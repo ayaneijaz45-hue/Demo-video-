@@ -310,18 +310,17 @@
       }
     }
   },
-  "cloudApprovedMixTransfer": {
-    "format": "FRM1-AES-256-GCM",
-    "assetId": 666358949,
-    "encryptedSha256": "f4b8adfca96bec21003376fd30ea0f8c89f8e5c899a78eb1900a4557d1284e1b"
-  },
+  "cloudApprovedMixTransfer": null,
   "delivery": {
-    "status": "FINAL_MASTER_EXPORTED_AND_VERIFIED",
-    "renderRunId": "39786555172",
-    "renderSourceCommit": "5b30fe67a02e5b5092b227df7a833c5174b18af8",
-    "masterSha256": "332a713cd02b3befd5d38a19372530fd77d76f37c65c17d95abe88a200541eba",
+    "status": "POLISHED_MASTER_EXPORTED_AND_VERIFIED",
+    "renderRunId": "39811413979",
+    "renderSourceCommit": "f17403f0544283f7a9123ef89816ff03f8a1dd5f",
+    "masterSha256": "b6acb1f3f1f05af0d2ab88d1c5f5f2d89e0f6a5b8228b8036e3cf0f2386ca0d8",
     "approvedMixSha256": "10d65ad9480b41bde4032a1913ac8ce3f50520112a1d51b1d8dced30ce4ec919",
     "temporaryTransferCleanedUp": true,
-    "rerenderRequiresFreshPrivateMixTransfer": true
+    "rerenderRequiresFreshPrivateMixTransfer": true,
+    "previousMasterSha256": "332a713cd02b3befd5d38a19372530fd77d76f37c65c17d95abe88a200541eba",
+    "visualPolishProofRunId": "39810798996",
+    "audioPacketPayloadIdenticalToPreviousMaster": true
   }
 }
