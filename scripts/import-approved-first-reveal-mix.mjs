@@ -13,8 +13,12 @@ const transfer = c.cloudApprovedMixTransfer;
 assert.ok(transfer && Number.isSafeInteger(transfer.assetId), "Configure a temporary approved-mix transfer first");
 assert.equal(transfer.format, "FRM1-AES-256-GCM");
 assert.match(process.env.FIRST_REVEAL_APPROVED_MIX_KEY || "", /^[a-f0-9]{64}$/, "Missing temporary mix decryption key");
-const response = await fetch(`https://api.github.com/repos/ayaneijaz45-hue/Demo-video-/releases/assets/${transfer.assetId}`, {
-  headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, Accept: "application/octet-stream", "X-GitHub-Api-Version": "2022-11-28" },
+// A short-lived release-assets redirect is held only in an Actions secret. The
+// read-only job token need not be granted access to draft-release administration.
+const source = new URL(process.env.FIRST_REVEAL_APPROVED_MIX_URL || "https://invalid.invalid");
+assert.equal(source.protocol, "https:");
+assert.ok(source.hostname.endsWith(".githubusercontent.com"), "Expected GitHub encrypted transfer storage");
+const response = await fetch(source, {
   signal: AbortSignal.timeout(60000),
 });
 assert.equal(response.status, 200, "Approved-mix transfer download failed");

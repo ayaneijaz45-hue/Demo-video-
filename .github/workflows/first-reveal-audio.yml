@@ -44,7 +44,7 @@ jobs:
       - name: Import the exact approved stereo mix for the master
         if: inputs.mode == 'master'
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          FIRST_REVEAL_APPROVED_MIX_URL: ${{ secrets.FIRST_REVEAL_APPROVED_MIX_URL }}
           FIRST_REVEAL_APPROVED_MIX_KEY: ${{ secrets.FIRST_REVEAL_APPROVED_MIX_KEY }}
         run: node scripts/import-approved-first-reveal-mix.mjs
       - name: Configuration and asset readiness — no media generated
