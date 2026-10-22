@@ -13,30 +13,30 @@ export const FirstFinale = () => {
             "radial-gradient(ellipse at 50% 32%,#1D3F59 0%,#081624 35%,#05070A 70%)",
         }}
       />
-      <Brow style={{ top: 135, left: 74 }}>MODELS SUITE</Brow>
+      <Brow style={{ top: 280, left: 180 }}>MODELS SUITE</Brow>
       <BrandObject finale />
       <div
         style={{
           position: "absolute",
-          left: 72,
-          right: 80,
-          top: 1110,
+          left: 180,
+          right: 180,
+          top: 880,
           textAlign: "center",
         }}
       >
-        <Word t={t} at={0.15} size={91}>
+        <Word t={t} at={0.15} size={74}>
           Every Leading AI.
         </Word>
-        <Word t={t} at={0.28} size={111} color={P.cyan}>
+        <Word t={t} at={0.28} size={88} color={P.cyan}>
           One PKR Wallet.
         </Word>
       </div>
       <div
         style={{
           position: "absolute",
-          left: 72,
-          right: 80,
-          top: 1390,
+          left: 180,
+          right: 180,
+          top: 1070,
           textAlign: "center",
           fontSize: 48,
           fontWeight: 500,
@@ -49,10 +49,10 @@ export const FirstFinale = () => {
       <div
         style={{
           position: "absolute",
-          top: 1510,
-          left: 228,
-          width: 624,
-          height: 98,
+          top: 1150,
+          left: 240,
+          width: 600,
+          height: 88,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -62,7 +62,7 @@ export const FirstFinale = () => {
           borderRadius: 100,
           background: P.cyan,
           color: P.ink,
-          transform: `translateY(${k(t, 1.05, 1.55, 70, 0)}px)`,
+          transform: `translateY(${k(t, 1.05, 1.55, 8, 0)}px)`,
           opacity: k(t, 1.05, 1.45),
         }}
       >

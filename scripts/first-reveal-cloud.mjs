@@ -24,7 +24,17 @@ const opts = [
   "--pixel-format=yuv420p",
   "--timeout=120000",
 ];
-if (mode === "proof") {
+if (mode === "logo-polish") {
+  run([
+    "render", ...base, "out/first-reveal/LOGO-POLISH-PROOF-SILENT.mp4",
+    "--frames=90-149", "--muted", ...opts,
+  ]);
+  for (const frame of [135, 267, 570, 620, 855, 888])
+    run([
+      "still", ...base, `out/first-reveal/frame-${frame}.png`,
+      `--frame=${frame}`, "--gl=swangle", "--timeout=120000",
+    ]);
+} else if (mode === "proof") {
   const clips = [
     ["01-tab-storm", 0, 89],
     ["02-brand-object", 90, 134],
@@ -120,7 +130,7 @@ writeFileSync(
       runId: process.env.GITHUB_RUN_ID,
       elapsedSeconds: (Date.now() - started) / 1000,
       renderer: "GitHub-hosted Ubuntu CPU / swangle / concurrency 1",
-      audio: "SILENT VISUAL PROOFS — external audio missing",
+      audio: "SILENT VISUAL PROOFS — approved soundtrack intentionally excluded",
       full30SecondMaster: "NOT EXPORTED",
       audioInspected: asset.narration.timingInspected,
     },

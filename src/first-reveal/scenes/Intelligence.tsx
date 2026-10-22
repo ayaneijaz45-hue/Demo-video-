@@ -17,7 +17,9 @@ import {
 export const IntelligenceReveal = () => {
   const t = useTime();
   const route = lin(t, 2.2, 3.3);
-  const pick = k(t, 2.7, 3.1);
+  const pick = k(t, 2.9, 3.3);
+  const settle = k(t, 2.2, 4.5);
+  const press = Math.sin(lin(t, 2.9, 3.15) * Math.PI);
   return (
     <Base>
       <Brow style={{ top: 130, left: 74 }}>INTELLIGENCE, CONNECTED</Brow>
@@ -70,7 +72,8 @@ export const IntelligenceReveal = () => {
           top: 770,
           width: 910,
           perspective: 1500,
-          transform: `rotateX(${k(t, 0.7, 2.6, 24, 0)}deg) rotateY(${k(t, 0.7, 2.6, -13, 0)}deg) translateY(${k(t, 0.7, 2.3, 240, 0)}px)`,
+          transformOrigin: "50% 60%",
+          transform: `perspective(1800px) rotateX(${k(t, 0.7, 2.6, 24, 1.2)}deg) rotateY(${k(t, 0.7, 2.6, -13, -1) + settle}deg) translateY(${k(t, 0.7, 2.3, 240, 0) - settle * 12}px) scale(${1 + settle * 0.018})`,
           opacity: k(t, 0.7, 1.6),
         }}
       >
@@ -105,7 +108,7 @@ export const IntelligenceReveal = () => {
                 Choose your model. Or go Auto.
               </div>
               <div style={{ marginTop: 30, display: "flex", gap: 12 }}>
-                <Pill active>Auto Best</Pill>
+                <Pill active style={{ transform: `scale(${1 - press * 0.035})` }}>Auto Best</Pill>
                 <Pill>GPT</Pill>
                 <Pill>Claude</Pill>
               </div>
@@ -117,9 +120,10 @@ export const IntelligenceReveal = () => {
                   borderRadius: 21,
                   background: "#0A1622",
                   boxShadow: `0 0 ${pick * 45}px #7EE7FF19`,
+                  transform: `translateY(${-pick * 3}px)`,
                 }}
               >
-                <div style={{ fontSize: 24, color: P.muted }}>
+                <div style={{ fontSize: 28, color: "#A9BCCC" }}>
                   Choose AI model
                 </div>
                 <div
@@ -137,7 +141,7 @@ export const IntelligenceReveal = () => {
                   Auto Best{" "}
                   <span style={{ marginLeft: "auto", opacity: pick }}>✓</span>
                 </div>
-                <div style={{ fontSize: 24, marginTop: 15, color: "#A9BCCC" }}>
+                <div style={{ fontSize: 26, marginTop: 15, color: "#B6CAD9" }}>
                   Quality · Speed · Cost · Availability
                 </div>
               </div>
@@ -157,23 +161,26 @@ export const IntelligenceReveal = () => {
         {[210, 435, 660, 885].map((x, i) => (
           <path
             key={x}
-            d={`M${x} 660 C${x} 810 740 800 740 1100`}
+            d={`M${x} 660 C${x} 790 600 780 600 1138`}
             fill="none"
             stroke={i % 2 ? P.violet : P.cyan}
-            strokeWidth="3"
-            strokeDasharray="700"
-            strokeDashoffset={700 * (1 - route)}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            pathLength="1"
+            strokeDasharray="1"
+            strokeDashoffset={1 - route}
+            opacity={0.65}
           />
         ))}
       </svg>
       {t > 2.1 && t < 3.7 ? (
         <Cursor
-          x={k(t, 2.1, 2.85, 940, 835)}
-          y={k(t, 2.1, 2.85, 1400, 1125)}
+          x={k(t, 2.1, 2.85, 940, 440)}
+          y={k(t, 2.1, 2.85, 1400, 1135)}
           click={Math.sin(lin(t, 2.9, 3.3) * Math.PI)}
         />
       ) : null}
-      <Note>Illustrative interface · model access varies by availability</Note>
+      <Note style={{ bottom: 350, right: 180, fontSize: 29 }}>Illustrative interface · model access varies by availability</Note>
     </Base>
   );
 };

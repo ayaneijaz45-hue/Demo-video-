@@ -150,7 +150,7 @@ export function main(mode = process.argv[2] || "preflight") {
     const props = `${out}/silent-visual-props.json`;
     writeFileSync(props, JSON.stringify({ targetFps: 30, narrationFile: null, musicFile: null, sfxFile: null }));
     // Final mastering uses only the approved mix. Never layer stems on top of it.
-    run(process.execPath, ["node_modules/@remotion/cli/remotion-cli.js", "render", "src/index.ts", "ModelsSuiteFirstReveal", `${out}/visual-only.mp4`, `--props=${props}`, "--codec=h264", "--crf=17", "--pixel-format=yuv420p", "--gl=swangle", "--concurrency=1", "--timeout=120000", "--muted"]);
+    run(process.execPath, ["node_modules/@remotion/cli/remotion-cli.js", "render", "src/index.ts", "ModelsSuiteFirstReveal", `${out}/visual-only.mp4`, `--props=${props}`, "--codec=h264", "--video-bitrate=10M", "--max-rate=12M", "--buffer-size=20M", "--x264-preset=slow", "--pixel-format=yuv420p", "--gl=swangle", "--concurrency=1", "--timeout=120000", "--muted"]);
     const visual = JSON.parse(run("ffprobe", ["-v", "error", "-show_streams", "-of", "json", `${out}/visual-only.mp4`], true));
     assert.equal(visual.streams.length, 1, "Visual render must contain exactly one video stream and no soundtrack");
     assert.equal(visual.streams[0].codec_type, "video");

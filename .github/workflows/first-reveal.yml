@@ -9,6 +9,7 @@ on:
           - proof
           - refine
           - proof60
+          - logo-polish
         default: proof
         required: true
 permissions:

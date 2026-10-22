@@ -17,7 +17,9 @@ export const CreationMorph = () => {
   const t = useTime();
   const image = k(t, 0.65, 1.7);
   const video = k(t, 2.8, 3.65);
-  const voice = k(t, 4.8, 5.8);
+  const voiceProgress = lin(t, 4.8, 5.8);
+  const voice = voiceProgress * voiceProgress * (3 - 2 * voiceProgress);
+  const drift = lin(t, 1.7, 5.5);
   const end = lin(t, 6.75, 7);
   const width = 720 + video * 220;
   const height = 820 - video * 150;
@@ -105,7 +107,7 @@ export const CreationMorph = () => {
           width,
           height,
           opacity: image * (1 - k(t, 5.5, 5.8)),
-          transform: `perspective(1400px) rotateY(${k(t, 0.65, 1.9, 32, 0) + video * -3}deg) rotateZ(${k(t, 0.65, 1.9, -8, 0) + video * 2}deg) scale(${k(t, 0.65, 1.65, 0.45, 1)})`,
+          transform: `perspective(1600px) translate3d(${Math.sin(drift * Math.PI) * 12}px,${-drift * 12}px,0) rotateX(${Math.sin(drift * Math.PI) * 2.5}deg) rotateY(${k(t, 0.65, 1.9, 32, 0) + video * -3 + Math.sin(drift * Math.PI * 1.4) * 2}deg) rotateZ(${k(t, 0.65, 1.9, -8, 0) + video * 2}deg) scale(${k(t, 0.65, 1.65, 0.45, 1)})`,
           borderRadius: 38,
           border: "1px solid #C3E8FF66",
           overflow: "hidden",
@@ -118,7 +120,7 @@ export const CreationMorph = () => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            transform: `scale(${1.04 + video * 0.2}) translate(${video * Math.sin(t * 1.2) * 14}px,${-video * t * 4}px)`,
+            transform: `scale(${1.065 + video * 0.15}) translate(${-Math.sin(drift * Math.PI) * 16}px,${-drift * 22}px)`,
           }}
         />
         <div
@@ -126,7 +128,7 @@ export const CreationMorph = () => {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(130deg,#FFFFFF35,transparent 20%,transparent 75%,#8FA7FF22)",
+              `linear-gradient(${130 + drift * 15}deg,#FFFFFF28,transparent 25%,transparent 72%,#8FA7FF22)`,
           }}
         />
         <div
@@ -134,10 +136,10 @@ export const CreationMorph = () => {
             position: "absolute",
             top: 24,
             left: 24,
-            fontSize: 21,
+            fontSize: 25,
             letterSpacing: 3,
             color: P.white,
-            background: "#05070A80",
+            background: "#05070AB8",
             borderRadius: 50,
             padding: "10px 18px",
           }}
@@ -167,7 +169,7 @@ export const CreationMorph = () => {
                 }}
               />
             </div>
-            <span style={{ fontSize: 22 }}>00:05</span>
+            <span style={{ fontSize: 26 }}>00:05</span>
           </div>
         ) : null}
       </div>
@@ -215,13 +217,13 @@ export const CreationMorph = () => {
           position: "absolute",
           left: 75,
           right: 85,
-          top: 1450,
+          top: 1430,
           display: "flex",
           gap: 28,
           fontSize: 39,
           fontWeight: 650,
           letterSpacing: -1,
-          color: "#5B758D",
+          color: "#829AAE",
         }}
       >
         {["Chat", "Image", "Video", "Voice"].map((name, i) => {
@@ -242,7 +244,7 @@ export const CreationMorph = () => {
           );
         })}
       </div>
-      <Note style={{ bottom: 220 }}>
+      <Note style={{ bottom: 320, right: 180, fontSize: 29 }}>
         Illustrative creative concept · not a Models Suite generation
       </Note>
     </Base>
