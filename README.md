@@ -50,6 +50,12 @@ Standard Linux runners in public repositories are documented as 4 vCPU / 16 GB R
 
 To publish files, the authenticated GitHub account must have write access to this repository and permission to modify workflows. To dispatch the verification workflow, it also needs Actions write access. CLI OAuth tokens commonly need `repo` and `workflow` scopes; fine-grained tokens need repository Contents and Workflows write access plus Actions write for dispatch. Never commit tokens.
 
+## Phase 1 verification record
+
+The [setup verification run 39737522841](https://github.com/ayaneijaz45-hue/Demo-video-/actions/runs/39737522841) succeeded on 22 October 2026 against infrastructure commit `1b0808454fddc1fbd7a400f12e914f7648b3ff51`. It measured 4 vCPUs and 15.61 GiB RAM on the GitHub-hosted Linux x64 runner with Node.js v24.21.0. Dependency installation, TypeScript, Remotion version checks, JavaScript bundling, FFmpeg version, empty browser launch, and environment report upload all passed. The environment report was also downloaded successfully.
+
+Phase 1 infrastructure is ready to receive Phase 2 requirements. No video or frames were generated or rendered. MP4 encoding and future composition/3D behavior remain untested. The future render workflow has not been dispatched.
+
 ## Official references
 
 - [Remotion manual installation](https://www.remotion.dev/docs/brownfield)
