@@ -156,3 +156,4 @@ build/
 # First Reveal licensed audio stays out of the public source repository.
 production/first-reveal/audio-assets/**
 !production/first-reveal/audio-assets/README.md
+__pycache__/

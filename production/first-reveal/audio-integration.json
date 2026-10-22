@@ -7,16 +7,18 @@
   "narration": {
     "path": "narration/runway-original.mp3",
     "independentlyMeasuredSeconds": 29.649,
-    "measurementSource": "User reports independent measurement; original backed up in Descript",
-    "fileInspectedHere": false,
+    "measurementSource": "ffprobe and decoded PCM frame count; word estimates from faster-whisper base.en plus measured quiet regions",
+    "fileInspectedHere": true,
     "playbackRate": 1,
     "offsetSeconds": 0,
-    "gainDb": 0
+    "gainDb": 0,
+    "decodedWorkingSeconds": 29.6,
+    "originalMP3ContainerSeconds": 29.64898
   },
   "music": {
     "path": "music/cinematic.wav",
-    "trimStartSeconds": null,
-    "gainDb": -20,
+    "trimStartSeconds": 40.0,
+    "gainDb": -6,
     "loop": false
   },
   "sfx": {
@@ -52,9 +54,9 @@
   },
   "review": {
     "visualsApproved": true,
-    "narrationTimingReviewed": false,
-    "cueTimingReviewed": false,
-    "rightsApproved": false,
+    "narrationTimingReviewed": true,
+    "cueTimingReviewed": true,
+    "rightsApproved": true,
     "finalExportApproved": false
   },
   "cues": [
@@ -63,7 +65,7 @@
       "startSeconds": 0.43,
       "endSeconds": 0.65,
       "asset": "ui",
-      "gainDb": -22,
+      "gainDb": -12,
       "enabled": true
     },
     {
@@ -76,10 +78,10 @@
     },
     {
       "id": "A03",
-      "startSeconds": 3.02,
-      "endSeconds": 4.2,
+      "startSeconds": 3.06,
+      "endSeconds": 4.31,
       "asset": "logo",
-      "gainDb": -17,
+      "gainDb": -18,
       "enabled": true
     },
     {
@@ -95,7 +97,7 @@
       "startSeconds": 8.9,
       "endSeconds": 9.05,
       "asset": "ui",
-      "gainDb": -22,
+      "gainDb": -12,
       "enabled": true
     },
     {
@@ -111,7 +113,7 @@
       "startSeconds": 13.3,
       "endSeconds": 14.1,
       "asset": "ui",
-      "gainDb": -20,
+      "gainDb": -12,
       "enabled": true
     },
     {
@@ -125,7 +127,7 @@
     {
       "id": "A09",
       "startSeconds": 16.25,
-      "endSeconds": 16.8,
+      "endSeconds": 17.12,
       "asset": "bloom",
       "gainDb": -22,
       "enabled": true
@@ -141,9 +143,9 @@
     {
       "id": "A11",
       "startSeconds": 19.8,
-      "endSeconds": 20.8,
+      "endSeconds": 21.0,
       "asset": "morph",
-      "gainDb": -24,
+      "gainDb": -22,
       "enabled": true
     },
     {
@@ -157,17 +159,17 @@
     {
       "id": "A13",
       "startSeconds": 23.3,
-      "endSeconds": 23.55,
+      "endSeconds": 23.92,
       "asset": "impact",
-      "gainDb": -24,
+      "gainDb": -22,
       "enabled": true
     },
     {
       "id": "A14",
       "startSeconds": 26,
-      "endSeconds": 27.3,
+      "endSeconds": 27.28,
       "asset": "logo",
-      "gainDb": -16,
+      "gainDb": -17,
       "enabled": true
     }
   ],
@@ -179,5 +181,131 @@
     "loudnessTargetLUFS": -16,
     "approvedMixTruePeakCeilingDbTP": -1.5,
     "encodedTruePeakCeilingDbTP": -1.0
+  },
+  "audioReviewEdit": {
+    "version": "v1",
+    "status": "USER_LISTENING_APPROVAL_PENDING",
+    "processingScope": "Audio-only local review; video/cloud master gates unchanged",
+    "voiceGainDb": -1.8,
+    "musicMaximumDuckDb": 6,
+    "narrationEdits": [
+      {
+        "label": "Hook",
+        "sourceStart": 0,
+        "sourceEnd": 1.75,
+        "timelineStart": 0
+      },
+      {
+        "label": "Meet Models Suite",
+        "sourceStart": 2.2,
+        "sourceEnd": 4.15,
+        "timelineStart": 2.9
+      },
+      {
+        "label": "Leading AI part 1",
+        "sourceStart": 4.6,
+        "sourceEnd": 6.5,
+        "timelineStart": 5.92
+      },
+      {
+        "label": "Leading AI part 2",
+        "sourceStart": 6.84,
+        "sourceEnd": 9.05,
+        "timelineStart": 7.9
+      },
+      {
+        "label": "One connected workspace",
+        "sourceStart": 15.7,
+        "sourceEnd": 17.5,
+        "timelineStart": 9.95
+      },
+      {
+        "label": "Model Battle",
+        "sourceStart": 9.55,
+        "sourceEnd": 11.8,
+        "timelineStart": 11.55
+      },
+      {
+        "label": "Create images",
+        "sourceStart": 12.25,
+        "sourceEnd": 13.45,
+        "timelineStart": 15.43
+      },
+      {
+        "label": "Videos",
+        "sourceStart": 13.48,
+        "sourceEnd": 14.22,
+        "timelineStart": 18.15
+      },
+      {
+        "label": "And voice",
+        "sourceStart": 14.23,
+        "sourceEnd": 15.25,
+        "timelineStart": 19.65
+      },
+      {
+        "label": "PKR equation",
+        "sourceStart": 17.8,
+        "sourceEnd": 20.85,
+        "timelineStart": 20.55
+      },
+      {
+        "label": "Closing brand",
+        "sourceStart": 21.55,
+        "sourceEnd": 22.7,
+        "timelineStart": 23.25
+      },
+      {
+        "label": "Tagline part 1",
+        "sourceStart": 22.95,
+        "sourceEnd": 24.35,
+        "timelineStart": 24.18
+      },
+      {
+        "label": "Tagline part 2",
+        "sourceStart": 24.77,
+        "sourceEnd": 26.6,
+        "timelineStart": 25.64
+      },
+      {
+        "label": "Website",
+        "sourceStart": 26.95,
+        "sourceEnd": 29.6,
+        "timelineStart": 27.14
+      }
+    ],
+    "narrationContentPolicy": "All spoken content retained at original speed/pitch. Connected-workspace phrase moved into intelligence; only quiet regions shortened or expanded. Small final-word declick; no replacement speech.",
+    "syncNotes": [
+      "Wallet narration begins approximately 20.77 s, anticipating the wallet visual at 22 s by 1.23 s.",
+      "Closing brand and first half of tagline bridge from wallet into the 26 s finale. This is an explicit review choice; no claim of exact shot-by-shot alignment.",
+      "Website phrase remains complete and finishes approximately 29.79 s. No final video is authorized before listening approval."
+    ],
+    "sfxCorrections": {
+      "ui": {
+        "highpassHz": 90,
+        "lowpassHz": 8500
+      },
+      "air": {
+        "highpassHz": 60,
+        "lowpassHz": 4500,
+        "trimStartSeconds": 0.12
+      },
+      "impact": {
+        "highpassHz": 55,
+        "lowpassHz": 4000
+      },
+      "bloom": {
+        "highpassHz": 160,
+        "lowpassHz": 6500
+      },
+      "morph": {
+        "highpassHz": 180,
+        "lowpassHz": 6200
+      },
+      "logo": {
+        "highpassHz": 85,
+        "lowpassHz": 7000
+      }
+    }
   }
 }

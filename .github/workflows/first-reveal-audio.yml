@@ -53,6 +53,13 @@ jobs:
       - name: Ensure browser only for a later full master
         if: inputs.mode == 'master'
         run: npx --no-install remotion browser ensure
+      - uses: actions/setup-python@v6
+        if: inputs.mode == 'mix-review'
+        with:
+          python-version: '3.12'
+      - name: Audio review processing dependencies
+        if: inputs.mode == 'mix-review'
+        run: python -m pip install -r production/requirements-audio.txt
       - name: Explicitly requested cloud audio mode
         if: inputs.mode != 'preflight'
         run: node scripts/first-reveal-audio.mjs "$AUDIO_MODE"

@@ -1,13 +1,14 @@
 {
-  "status": "PHASE5_PREPARED_AWAITING_APPROVED_ASSETS",
+  "status": "AUDIO_REVIEW_V1_AWAITING_USER_APPROVAL",
   "narration": {
     "path": null,
     "reportedApproximateSeconds": 29.6,
-    "measuredSeconds": null,
-    "timingInspected": false,
-    "source": "Runway original backed up in Descript; original MP3 not supplied here",
+    "measuredSeconds": 29.64898,
+    "timingInspected": true,
+    "source": "Actual user-supplied Runway MP3 inspected; original kept privately and unchanged",
     "independentlyMeasuredSeconds": 29.649,
-    "measurementSource": "User reports independent measurement; not file-inspected here"
+    "measurementSource": "User reports independent measurement; not file-inspected here",
+    "decodedWorkingSeconds": 29.6
   },
   "music": {
     "path": null,

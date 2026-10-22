@@ -1,15 +1,15 @@
 id,start_seconds,end_seconds,start_frame_30,end_frame_30,start_frame_60,end_frame_60,asset,gain_db_starting_point,enabled,visual_event,direction,phase4_original_events
-A01,0.43,0.65,13,20,26,39,ui-detail.wav,-22,True,One tab detail,Single dry tactile tick; the opening music carries the title,1;2;3;4;5
+A01,0.43,0.65,13,20,26,39,ui-detail.wav,-12,True,One tab detail,Single dry tactile tick; the opening music carries the title,1;2;3;4;5
 A02,1.5,2.95,45,89,90,177,airy-resolve.wav,-18,True,Tab convergence and magnetic resolve,One continuous airy gesture with a soft stop,6;7
-A03,3.02,4.2,91,126,181,252,logo-signature.wav,-17,True,First brand reveal,Restrained warm signature with a short glass tail,8;9
+A03,3.06,4.31,92,129,184,259,logo-signature.wav,-18,True,First brand reveal,Restrained warm signature with a short glass tail,8;9
 A04,8.2,9.3,246,279,492,558,airy-resolve.wav,-28,False,Routing trace,Optional very low texture; omit if speech is dense,10;11;12;13;15
-A05,8.9,9.05,267,272,534,543,ui-detail.wav,-22,True,Auto Best selection,One quiet click; no confirmation melody,14
+A05,8.9,9.05,267,272,534,543,ui-detail.wav,-12,True,Auto Best selection,One quiet click; no confirmation melody,14
 A06,10.85,11.15,326,335,651,669,airy-resolve.wav,-27,False,Model comparison split,Optional short stereo separation,16;17
-A07,13.3,14.1,399,423,798,846,ui-detail.wav,-20,True,Winner selection,One tactile selection accent; no separate lift sound,18;19
+A07,13.3,14.1,399,423,798,846,ui-detail.wav,-12,True,Winner selection,One tactile selection accent; no separate lift sound,18;19
 A08,14.5,15.2,435,456,870,912,airy-resolve.wav,-20,True,Transfer into creative idea,One directional gesture; no separate submit click,20;21
-A09,16.25,16.8,488,504,975,1008,material-bloom.wav,-22,True,Image develops,Soft material opening; no noise burst,22
+A09,16.25,17.12,488,514,975,1027,material-bloom.wav,-22,True,Image develops,Soft material opening; no noise burst,22
 A10,17.8,18.3,534,549,1068,1098,airy-resolve.wav,-28,False,Image-to-motion framing,Optional understated width change; omit playback click,23;24
-A11,19.8,20.8,594,624,1188,1248,morph-texture.wav,-24,True,Image slices become voice waveform,Clean sparse flutter; no synthetic voice or buzz,25
+A11,19.8,21.0,594,630,1188,1260,morph-texture.wav,-22,True,Image slices become voice waveform,Clean sparse flutter; no synthetic voice or buzz,25
 A12,21.75,22.1,653,663,1305,1326,airy-resolve.wav,-22,True,Wallet light-mode change,Short soft downward air; typography supplies remaining motion,26;27;29
-A13,23.3,23.55,699,707,1398,1413,soft-impact.wav,-24,True,Rupee/credit equation settles,Small rounded tactile impact; no coins or casino sound,28
-A14,26,27.3,780,819,1560,1638,logo-signature.wav,-16,True,Final logo signature,"Same identity as A03, slightly fuller resolve; URL and speech then remain clear",30;31;32;33;34;35
+A13,23.3,23.92,699,718,1398,1435,soft-impact.wav,-22,True,Rupee/credit equation settles,Small rounded tactile impact; no coins or casino sound,28
+A14,26,27.28,780,818,1560,1637,logo-signature.wav,-17,True,Final logo signature,"Same identity as A03, slightly fuller resolve; URL and speech then remain clear",30;31;32;33;34;35

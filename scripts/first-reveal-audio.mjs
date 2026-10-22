@@ -112,7 +112,7 @@ export function main(mode = process.argv[2] || "preflight") {
   const out = "out/first-reveal-audio";
   mkdirSync(out, { recursive: true });
   const issues = checkAssets(c, root, mode === "master");
-  const report = { mode, configuration: "VALID", assetsReady: issues.length === 0, missingOrPending: issues, masterMissingOrPending: checkAssets(c, root, true), userSuppliedNarrationDurationSeconds: 29.649, narrationFileInspected: false, videoExported: false };
+  const report = { mode, configuration: "VALID", assetsReady: issues.length === 0, missingOrPending: issues, masterMissingOrPending: checkAssets(c, root, true), userSuppliedNarrationDurationSeconds: 29.649, narrationFileInspected: c.narration.fileInspectedHere === true, videoExported: false };
   writeFileSync(`${out}/readiness.json`, JSON.stringify(report, null, 2));
   if (mode === "preflight") { console.log(JSON.stringify(report, null, 2)); return; }
   cloudOnly();
@@ -127,7 +127,14 @@ export function main(mode = process.argv[2] || "preflight") {
   report.narrationMetadata = narration;
   if (mode === "mix-review") {
     const p = `${out}/FirstReveal-DRAFT-mix-review.wav`;
-    run("ffmpeg", buildMixArgs(c, root, p));
+    if (c.audioReviewEdit) {
+      // Reproduce the conformed review, never fall back to the original unsynchronized speech.
+      run("ffmpeg", ["-hide_banner", "-y", "-i", assetPath(root, c.narration.path), "-ar", "48000", "-c:a", "pcm_s24le", assetPath(root, "narration/narration-working.wav")]);
+      run("python", ["scripts/first-reveal-review.py", "--audio-only-review"]);
+      copyFileSync(assetPath(root, "review/ModelsSuiteFirstReveal-AUDIO-REVIEW-v1.wav"), p);
+    } else {
+      run("ffmpeg", buildMixArgs(c, root, p));
+    }
     report.draftMix = { file: p, sha256: hashFile(p), loudness: measure(p, `${out}/draft-loudness.json`) };
     report.status = "DRAFT ONLY — listen and master/approve before final export";
   } else {
