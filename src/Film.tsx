@@ -31,7 +31,9 @@ const Seam = () => {
     />
   );
 };
-export const Film = () => {
+type FilmProps = {voiceoverFile: string | null};
+
+export const Film = ({voiceoverFile = null}: FilmProps) => {
   const { fps } = useVideoConfig();
   const f = useCurrentFrame();
   return (
@@ -162,6 +164,15 @@ export const Film = () => {
         premountFor={fps}
         volume={0.65}
       />
+      {voiceoverFile ? (
+        <Audio
+          name="Approved professional narration — aligned 60-second track"
+          src={staticFile(voiceoverFile)}
+          durationInFrames={60 * fps}
+          premountFor={fps}
+          volume={1}
+        />
+      ) : null}
       <AbsoluteFill
         style={{
           pointerEvents: "none",

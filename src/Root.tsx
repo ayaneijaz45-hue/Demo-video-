@@ -18,6 +18,7 @@ export const RemotionRoot = () => (
       height={1920}
       fps={30}
       durationInFrames={1800}
+      defaultProps={{voiceoverFile: null}}
     />
     <Folder name="Scenes">
       <Composition

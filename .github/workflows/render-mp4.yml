@@ -41,7 +41,7 @@ jobs:
             echo "A valid composition ID is required."
             exit 1
           fi
-          npx --no-install remotion render src/index.ts "$COMPOSITION_ID" out/video.mp4 --codec=h264 --concurrency=2
+          npx --no-install remotion render src/index.ts "$COMPOSITION_ID" out/video.mp4 --codec=h264 --audio-codec=aac --concurrency=2 --props="$(node -p 'JSON.stringify({voiceoverFile:require("./production/narration.json").voiceFile})')"
       - uses: actions/upload-artifact@v4
         with:
           name: mp4-${{ github.run_id }}
