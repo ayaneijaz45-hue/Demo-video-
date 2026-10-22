@@ -13,14 +13,14 @@ This film uses an immediate typographic opening; a radial tab convergence; an ac
 | Seconds | Frames at 30 FPS | Component | Core event |
 | --- | --- | --- | --- |
 | 0–3 | 0–89 | TabStorm | Immediate question; six source-based modality/model windows converge |
-| 3–6 | 90–179 | BrandReveal | Camera arcs across a metal/ceramic brand object; authentic logo texture |
+| 3–6 | 90–179 | BrandReveal | Camera arcs across the beveled authentic logo extrusion with moving reflections |
 | 6–11 | 180–329 | IntelligenceReveal | Model families collect; UI resolves; routing and Auto Best click |
 | 11–15 | 330–449 | BattleReveal | Prompt, two illustrative answers, selected winner and camera push |
 | 15–22 | 450–659 | CreationMorph | Chat text → original image art → motion framing → waveform slices |
 | 22–26 | 660–779 | WalletReveal | Kinetic rupee/credit equation; truthful estimate policy |
 | 26–30 | 780–899 | FirstFinale | 3D logo object; tagline, website and account invitation |
 
-Every animation derives from frame / fps, including Three.js camera and lighting-related motion. No independent R3F useFrame loop or CSS animation is used. The main composition accepts targetFps=30 or 60 through calculateMetadata; 60 FPS is an optional capability that must be benchmarked separately before a full 60 FPS export. Initial proofs use 30 FPS.
+Every animation derives from frame / fps, including Three.js camera and lighting-related motion. No independent R3F useFrame loop or CSS animation is used. The main composition accepts targetFps=30 or 60 through calculateMetadata. A one-second 60 FPS brand benchmark passed; a complete 60 FPS export remains untested. Main proofs use 30 FPS. See PRODUCTION-REPORT.md for the cloud runs and verification limits.
 
 ## Resource strategy
 
