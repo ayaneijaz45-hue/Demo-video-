@@ -14,9 +14,9 @@ import { ConceptArt } from "../components/ConceptArt";
 export const Creation = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const mode = f < 2.4 * fps ? 0 : f < 5.5 * fps ? 1 : f < 8.7 * fps ? 2 : 3;
+  const mode = f < 2.15 * fps ? 0 : f < 3.8 * fps ? 1 : f < 5.5 * fps ? 2 : 3;
   const names = ["Chat", "Images", "Video", "Voice"];
-  const phase = f - [0, 2.4 * fps, 5.5 * fps, 8.7 * fps][mode];
+  const phase = f - [0, 2.15 * fps, 3.8 * fps, 5.5 * fps][mode];
   return (
     <Stage chapter="05" label="ONE IDEA. EVERY DIRECTION.">
       <Headline lines={["From ideas", "to creation."]} size={104} />

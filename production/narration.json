@@ -3,55 +3,80 @@
   "approvedFinalAudioMaster": false,
   "voiceFile": null,
   "language": "English",
-  "direction": "Calm, assured, conversational. Human warmth; no exaggerated announcer delivery. Leave each reserved gap intact.",
+  "scriptSource": "User-proposed launch advertisement voiceover, 22 October 2026. Wording preserved verbatim.",
+  "direction": "Calm, assured and conversational; windows are maximum reservations, not instructions to stretch words. Preserve natural pauses. Suite is pronounced sweet; PKR is P-K-R; say models suite dot com clearly. Actual recording must be reviewed against these timing targets.",
   "cues": [
     {
       "scene": "Hook",
-      "start": 0.7,
-      "end": 3.4,
-      "script": "Too many AI tools?"
+      "start": 0.55,
+      "end": 4.2,
+      "script": "What if your AI tools worked together?"
     },
     {
       "scene": "Reveal",
-      "start": 6.0,
-      "end": 9.8,
-      "script": "Meet Models Suite. Your connected AI workspace."
+      "start": 5.5,
+      "end": 7.25,
+      "script": "Meet Models Suite."
     },
     {
       "scene": "Intelligence",
-      "start": 13.0,
-      "end": 18.3,
-      "script": "Choose a leading model. Or let Auto Best route your next task."
+      "start": 12.2,
+      "end": 14.55,
+      "script": "Leading AI models. One connected workspace."
+    },
+    {
+      "scene": "Intelligence",
+      "start": 14.8,
+      "end": 19.45,
+      "script": "Choose your model—or let Auto Best find the right fit."
     },
     {
       "scene": "Model Battle",
-      "start": 20.8,
-      "end": 26.7,
-      "script": "One prompt. Different perspectives. Compare the answers, and choose your favorite."
+      "start": 20.65,
+      "end": 24.2,
+      "script": "Compare answers with Model Battle."
     },
     {
       "scene": "Creation",
-      "start": 29.0,
-      "end": 37.9,
-      "script": "Start with a thought. Shape it into an image. Explore video. Give it a voice."
+      "start": 28.45,
+      "end": 34.3,
+      "script": "Turn ideas into conversations, images, videos and voice."
+    },
+    {
+      "scene": "Creation",
+      "start": 35.15,
+      "end": 39.45,
+      "script": "Create with more possibilities, without juggling separate subscriptions."
     },
     {
       "scene": "Pricing",
-      "start": 40.8,
-      "end": 46.6,
-      "script": "Simple credits. One credit equals one rupee. Review media estimates before you create."
+      "start": 40.35,
+      "end": 44.15,
+      "script": "And when it's time to create, know what you're spending."
+    },
+    {
+      "scene": "Pricing",
+      "start": 44.45,
+      "end": 47.45,
+      "script": "One credit. One Pakistani rupee."
     },
     {
       "scene": "Localization",
-      "start": 48.7,
-      "end": 52.9,
-      "script": "English. Urdu. Roman Urdu. Global AI, with local simplicity."
+      "start": 48.35,
+      "end": 53.15,
+      "script": "Global AI, built for the way Pakistan works."
     },
     {
       "scene": "Finale",
-      "start": 54.7,
-      "end": 58.7,
-      "script": "Models Suite. Every leading AI. One PKR wallet."
+      "start": 54.1,
+      "end": 57.0,
+      "script": "Models Suite. Every Leading AI. One PKR Wallet."
+    },
+    {
+      "scene": "Finale",
+      "start": 57.15,
+      "end": 59.5,
+      "script": "Discover more at modelssuite.com."
     }
   ]
 }

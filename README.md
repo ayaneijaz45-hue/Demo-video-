@@ -23,7 +23,7 @@ Use **Actions → Phase 2 cloud production previews → Run workflow**.
 
 1. Choose proof. This renders representative short ranges and ten full-resolution scene frames on the free standard Ubuntu runner.
 2. Inspect the actual outputs for cropping, typography, animation and technical failures.
-3. Only after that review, choose full-preview. This renders the complete film with original music/effects, normalizes the audio, produces an actual-output filmstrip, and checks H.264/AAC, resolution, frame count, frame rate and duration.
+3. Only after that review, choose full-preview. This renders the complete film with original music/effects, normalizes the audio, extracts 30 actual-output review frames, and checks H.264/AAC, resolution, frame count, frame rate and duration.
 
 Download the corresponding artifact from the run page. Seven-day retention applies to Phase 2 previews. Neither workflow runs automatically on push. Both skip private repositories and use only ubuntu-24.04 standard GitHub-hosted runners with concurrency 2. No GPU, paid cloud, website deployment or product-generation API is used.
 

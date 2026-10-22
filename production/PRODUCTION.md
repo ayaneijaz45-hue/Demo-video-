@@ -6,14 +6,14 @@ Art direction: restrained cyan/violet against ink black; airy editorial ice-whit
 
 | Time | Frames (inclusive) | Scene | Choreography | Narration window |
 | --- | --- | --- | --- | --- |
-| 00–05 | 0–149 | Hook | Fragmented chat/image/video/voice panels converge; typography reveals through masks | 0.7–3.4 |
-| 05–12 | 150–359 | Reveal | Authentic logo rises over rotating ellipses; dimensional workspace unfolds | 6.0–9.8 |
-| 12–20 | 360–599 | Intelligence | Model-family panels fan in; route paths converge on Auto Best | 13.0–18.3 |
-| 20–28 | 600–839 | Model Battle | Same prompt feeds two answers; one winner elevates | 20.8–26.7 |
-| 28–40 | 840–1199 | Creation | Chat becomes image concept, motion concept and speech waveform in one panel | 29.0–37.9 |
-| 40–48 | 1200–1439 | Pricing | Credit/rupee equation resolves; estimate and authorization interface rises | 40.8–46.6 |
-| 48–54 | 1440–1619 | Localization | PK focal point; English, Urdu and Roman Urdu prompt panels | 48.7–52.9 |
-| 54–60 | 1620–1799 | Finale | Authentic brand resolves; tagline, website and account invitation; short closing fade | 54.7–58.7 |
+| 00–05 | 0–149 | Hook | Fragmented interfaces converge on “worked together” | 0.55–4.20 |
+| 05–12 | 150–359 | Reveal | Authentic logo and dimensional workspace reveal | 5.50–7.25 |
+| 12–20 | 360–599 | Intelligence | Model choice at 12.2; Auto Best route resolves 16.1–18.0 | 12.20–14.55; 14.80–19.45 |
+| 20–28 | 600–839 | Model Battle | Comparison during the line; winner lift at 25 seconds | 20.65–24.20 |
+| 28–40 | 840–1199 | Creation | Chat → images 30.15 → video 31.80 → voice 33.50, then connected workspace hold | 28.45–34.30; 35.15–39.45 |
+| 40–48 | 1200–1439 | Pricing | Estimate appears first; credit/rupee equation resolves around 44–45.3 | 40.35–44.15; 44.45–47.45 |
+| 48–54 | 1440–1619 | Localization | PK and English/Urdu/Roman Urdu panels support the Pakistan line | 48.35–53.15 |
+| 54–60 | 1620–1799 | Finale | Brand/tagline, then website invitation; voice should finish by 59.5 | 54.10–57.00; 57.15–59.50 |
 
 ## Audio
 
@@ -26,7 +26,7 @@ production/narration.json is the narration handoff: approved wording, maximum wi
 - TypeScript and exact Remotion version checks before every cloud render.
 - Proof mode renders 4 seconds of Battle, 7.5 seconds of Creation and 3 seconds across the Creation/Pricing boundary. Ten full-resolution frames cover all eight scenes and all creative modes.
 - Review those outputs before any full-length render. Concurrency is fixed to two Chromium tabs on a standard 4-vCPU public Ubuntu runner.
-- Full-preview mode records render time, encodes H.264/AAC, creates a 30-frame filmstrip from the actual MP4 and probes dimensions, codec, fps, frame count, channel count, sample rate and duration.
+- Full-preview mode records render time, encodes H.264/AAC, extracts 30 review frames from the actual MP4 and probes dimensions, codec, fps, frame count, channel count, sample rate and duration.
 - No local video renders; local Studio interaction is used for layout checks. Downloading and decoding cloud results for review does not re-render the composition.
 
 ## Limitations

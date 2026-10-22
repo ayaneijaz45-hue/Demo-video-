@@ -25,7 +25,8 @@ export const Pricing = () => {
           display: "flex",
           alignItems: "center",
           gap: 32,
-          translate: `0 ${anim(f, 14, 55, 80, 0)}px`,
+          translate: `0 ${anim(f, 100, 140, 80, 0)}px`,
+          opacity: anim(f, 95, 120),
         }}
       >
         <div style={{ flex: 1 }}>
@@ -44,11 +45,11 @@ export const Pricing = () => {
           </div>
         </div>
         <div
-          style={{ fontSize: 76, color: "#8DA5B4", opacity: anim(f, 35, 65) }}
+          style={{ fontSize: 76, color: "#8DA5B4", opacity: anim(f, 115, 145) }}
         >
           =
         </div>
-        <div style={{ flex: 1, textAlign: "right", opacity: anim(f, 40, 75) }}>
+        <div style={{ flex: 1, textAlign: "right", opacity: anim(f, 125, 160) }}>
           <div
             style={{
               fontSize: 160,
@@ -72,8 +73,8 @@ export const Pricing = () => {
           left: 72,
           top: 1050,
           width: 908,
-          translate: `0 ${anim(f, 70, 110, 130, 0)}px`,
-          opacity: anim(f, 65, 100),
+          translate: `0 ${anim(f, 20, 60, 130, 0)}px`,
+          opacity: anim(f, 18, 55),
         }}
       >
         <Bar light title="Before you generate" />
@@ -121,7 +122,7 @@ export const Pricing = () => {
           position: "absolute",
           left: 72,
           top: 1470,
-          opacity: anim(f, 130, 155),
+          opacity: anim(f, 170, 200),
         }}
       >
         Estimate → Authorize → Create

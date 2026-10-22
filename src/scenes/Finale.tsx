@@ -27,7 +27,7 @@ export const Finale = () => {
           fontSize: 64,
           fontWeight: 650,
           letterSpacing: -2,
-          opacity: anim(f, 15, 50),
+          opacity: anim(f, 3, 20),
         }}
       >
         Models Suite

@@ -14,7 +14,7 @@ import {
 export const Intelligence = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const route = anim(f, 2 * fps, 3.8 * fps);
+  const route = anim(f, 4.1 * fps, 6 * fps);
   return (
     <Stage chapter="03" label="CHOOSE YOUR MODEL. OR GO AUTO.">
       <Headline lines={["Leading AI.", "One workspace."]} size={96} />
@@ -123,7 +123,7 @@ export const Intelligence = () => {
           position: "absolute",
           left: 310,
           top: 1435,
-          opacity: anim(f, 110, 135),
+          opacity: anim(f, 183, 204),
         }}
       >
         You choose. Or let Auto Best route.

@@ -83,7 +83,7 @@ for start in [5,12,20,28,40,48,54]:
     impact=np.sin(2*np.pi*(42*t+25*.06*(1-np.exp(-t/.06))))*np.exp(-t*6)
     shine=np.sin(2*np.pi*hz(86)*t)*np.exp(-t*12)*.14
     add(fx,start,impact*.3+shine*.2)
-for start in [2.7,8,15.8,22.4,25.1,30.4,33.5,36.7,42.2,44.6,49.6,50.7,51.8,56.5]:
+for start in [3.25,6.0,16.1,18.0,22.4,25.1,30.15,31.8,33.5,41.7,44.8,49.6,50.7,51.8,57.2]:
     t=np.arange(int(.22*SR))/SR
     tick=(np.sin(2*np.pi*hz(86)*t)+.3*np.sin(2*np.pi*hz(93)*t))*np.exp(-t*38)
     add(fx,start,tick*.075,np.sin(start)*.4)
