@@ -1,0 +1,9 @@
+{
+  "status": "AWAITING_EXTERNAL_AUDIO",
+  "narration": {"path": null, "reportedApproximateSeconds": 29.6, "measuredSeconds": null, "timingInspected": false, "source": "User reports a Runway-generated MP3; not attached yet"},
+  "music": {"path": null, "licenseEvidence": null, "approved": false},
+  "sfxStem": {"path": null, "licenseEvidence": null, "approved": false},
+  "approvedMix": {"path": null, "approved": false},
+  "finalExportApproved": false,
+  "rules": ["Do not reuse the previous synthesized score or effects", "Do not alter narration playback speed", "Inspect actual MP3 timing before final synchronization", "No paid generation or acquisition without user authorization", "Do not export an audio-integrated master while assets or rights are missing"]
+}

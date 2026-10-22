@@ -8,9 +8,11 @@ import { Creation } from "./scenes/Creation";
 import { Pricing } from "./scenes/Pricing";
 import { Localization } from "./scenes/Localization";
 import { Finale } from "./scenes/Finale";
+import { FirstRevealRegistrations } from "./first-reveal/Registration";
 
 export const RemotionRoot = () => (
   <>
+    <FirstRevealRegistrations />
     <Composition
       id="ModelsSuite"
       component={Film}

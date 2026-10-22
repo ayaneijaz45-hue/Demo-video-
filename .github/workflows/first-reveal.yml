@@ -1,0 +1,41 @@
+name: First Reveal — separate visual proofs
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Silent short proofs; final export waits for supplied and approved audio
+        type: choice
+        options:
+          - proof
+          - proof60
+        default: proof
+        required: true
+permissions:
+  contents: read
+jobs:
+  proof:
+    if: github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      REVEAL_MODE: ${{ inputs.mode }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run verify
+      - run: npx --no-install remotion browser ensure
+      - name: Short CPU proofs — never a premature audio master
+        run: node scripts/first-reveal-cloud.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: first-reveal-${{ inputs.mode }}-${{ github.run_id }}
+          path: out/first-reveal/
+          retention-days: 7
+          if-no-files-found: warn

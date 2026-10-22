@@ -1,0 +1,8 @@
+# Original creation artwork
+
+Tool: built-in ImageGen; no API key or paid external image workflow was activated.
+Project asset: public/first-reveal/glass-bloom.png. The authentic logo is a separate existing asset and was not regenerated.
+
+Exact generation prompt:
+
+> Use case: ads-marketing / stylized-concept. Create ONE original, extraordinary photoreal CGI artwork to be used as the hero image inside an animated AI technology product launch film. This is an artistic creative concept, NOT a product screenshot. Portrait 3:4 framing, ultra high quality. A breathtaking suspended sculptural flower made from folded translucent cyan glass and luminous blue-violet silk membranes, asymmetrical and flowing like a liquid iris in mid-transformation, with many thin organic layers, finely etched glass edges, believable caustic light, soft subsurface scattering, exquisite material detail, realistic reflections, very fine restrained atmospheric dust, on a deep nearly black #05070A studio backdrop. White silver back light, cyan edge light #7EE7FF, periwinkle highlights #8FA7FF, ultra subtle lavender shadow. Strong sculptural diagonal from lower left to upper right, with the complete main flower centered and contained in the middle 80% of the frame, space at the edges for motion cropping. Cinematic 85mm macro product photography, credible light and form, a bold beautiful memorable shape. Sensuous smooth glossy surfaces contrasted with fine frosted texture. No torus, no rings, no spheres, no generic geometric placeholder shapes. No logo, no text, no UI, no watermark. Original art, do not copy a known campaign or artist. This will be used for commercial promotion of an AI workspace; keep it refined, technologically sophisticated, and unmistakably premium.
