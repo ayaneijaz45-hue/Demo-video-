@@ -37,9 +37,16 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run verify
       - name: Import approved assets if a bundle has been configured
+        if: inputs.mode != 'master'
         env:
           FIRST_REVEAL_AUDIO_BUNDLE_URL: ${{ secrets.FIRST_REVEAL_AUDIO_BUNDLE_URL }}
         run: python3 scripts/fetch-first-reveal-audio.py
+      - name: Import the exact approved stereo mix for the master
+        if: inputs.mode == 'master'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          FIRST_REVEAL_APPROVED_MIX_KEY: ${{ secrets.FIRST_REVEAL_APPROVED_MIX_KEY }}
+        run: node scripts/import-approved-first-reveal-mix.mjs
       - name: Configuration and asset readiness — no media generated
         run: node scripts/first-reveal-audio.mjs preflight
       - name: Verify FFmpeg tools for future audio work

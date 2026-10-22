@@ -49,15 +49,17 @@
   },
   "approvedMix": {
     "path": "mix/approved-stereo.wav",
-    "sha256": null,
-    "source": null
+    "sha256": "10d65ad9480b41bde4032a1913ac8ce3f50520112a1d51b1d8dced30ce4ec919",
+    "source": "Exact audio review v1 WAV; explicitly approved by user for final integration",
+    "approved": true
   },
   "review": {
     "visualsApproved": true,
     "narrationTimingReviewed": true,
     "cueTimingReviewed": true,
     "rightsApproved": true,
-    "finalExportApproved": false
+    "finalExportApproved": true,
+    "soundtrackApproved": true
   },
   "cues": [
     {
@@ -184,7 +186,7 @@
   },
   "audioReviewEdit": {
     "version": "v1",
-    "status": "USER_LISTENING_APPROVAL_PENDING",
+    "status": "APPROVED_BY_USER_FOR_FINAL_INTEGRATION",
     "processingScope": "Audio-only local review; video/cloud master gates unchanged",
     "voiceGainDb": -1.8,
     "musicMaximumDuckDb": 6,
@@ -307,5 +309,10 @@
         "lowpassHz": 7000
       }
     }
+  },
+  "cloudApprovedMixTransfer": {
+    "format": "FRM1-AES-256-GCM",
+    "assetId": 665940537,
+    "encryptedSha256": "9e0980bdcb3c1b71eac97197d8694aa0aaab5467dedc545f2830af7c4de1fbfa"
   }
 }

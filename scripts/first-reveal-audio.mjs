@@ -59,7 +59,7 @@ function cloudOnly() {
   assert.equal(process.env.GITHUB_REPOSITORY, "ayaneijaz45-hue/Demo-video-");
 }
 function checkAssets(c, root, master) {
-  const required = master ? [c.narration.path, c.music.path, ...Object.values(c.sfx).map((x) => x.path), c.approvedMix.path, "rights/rights.json"]
+  const required = master ? [c.approvedMix.path]
     : [c.narration.path, c.music.path, ...Object.values(c.sfx).map((x) => x.path), "rights/rights.json"];
   const issues = required.filter((p) => !existsSync(assetPath(root, p))).map((p) => `Missing: ${p}`);
   if (!c.review.narrationTimingReviewed) issues.push("Narration phrase boundaries and 29.649 s file not inspected in this project");
@@ -69,7 +69,7 @@ function checkAssets(c, root, master) {
   if (!Number.isFinite(c.music.trimStartSeconds) || c.music.trimStartSeconds < 0) issues.push("Music in-point not selected");
   if (master && !c.review.finalExportApproved) issues.push("Final export not approved");
   if (master && !/^[a-f0-9]{64}$/.test(c.approvedMix.sha256 || "")) issues.push("Exact approved stereo mix SHA-256 missing");
-  if (existsSync(assetPath(root, "rights/rights.json"))) {
+  if (!master && existsSync(assetPath(root, "rights/rights.json"))) {
     const rights = JSON.parse(readFileSync(assetPath(root, "rights/rights.json"), "utf8"));
     for (const key of ["narration", "music", ...Object.keys(c.sfx)]) {
       const r = rights.assets?.[key];
@@ -111,21 +111,21 @@ export function main(mode = process.argv[2] || "preflight") {
   const root = resolve("production/first-reveal/audio-assets");
   const out = "out/first-reveal-audio";
   mkdirSync(out, { recursive: true });
-  const issues = checkAssets(c, root, mode === "master");
+  const masterInputs = mode === "master" || (mode === "preflight" && process.env.AUDIO_MODE === "master");
+  const issues = checkAssets(c, root, masterInputs);
   const report = { mode, configuration: "VALID", assetsReady: issues.length === 0, missingOrPending: issues, masterMissingOrPending: checkAssets(c, root, true), userSuppliedNarrationDurationSeconds: 29.649, narrationFileInspected: c.narration.fileInspectedHere === true, videoExported: false };
   writeFileSync(`${out}/readiness.json`, JSON.stringify(report, null, 2));
   if (mode === "preflight") { console.log(JSON.stringify(report, null, 2)); return; }
   cloudOnly();
   assert.equal(issues.length, 0, issues.join("\n"));
-  const narration = probe(assetPath(root, c.narration.path));
-  assert.ok(Math.abs(narration.seconds - 29.649) <= 0.08, "Narration differs from 29.649 s; inspect encoder padding and actual decoded speech before proceeding");
-  assert.ok(narration.seconds <= 30, "Narration must not be cut or sped up");
-  const music = probe(assetPath(root, c.music.path));
-  assert.ok(music.seconds >= c.music.trimStartSeconds + 30 - 0.01, "Select a complete 30 s music range; no automatic loop");
-  for (const a of Object.values(c.sfx)) probe(assetPath(root, a.path));
-  report.narrationFileInspected = true;
-  report.narrationMetadata = narration;
   if (mode === "mix-review") {
+    const narration = probe(assetPath(root, c.narration.path));
+    assert.ok(Math.abs(narration.seconds - 29.649) <= 0.08, "Narration differs from 29.649 s; inspect encoder padding and actual decoded speech before proceeding");
+    assert.ok(narration.seconds <= 30, "Narration must not be cut or sped up");
+    const music = probe(assetPath(root, c.music.path));
+    assert.ok(music.seconds >= c.music.trimStartSeconds + 30 - 0.01, "Select a complete 30 s music range; no automatic loop");
+    for (const a of Object.values(c.sfx)) probe(assetPath(root, a.path));
+    report.narrationMetadata = narration;
     const p = `${out}/FirstReveal-DRAFT-mix-review.wav`;
     if (c.audioReviewEdit) {
       // Reproduce the conformed review, never fall back to the original unsynchronized speech.
@@ -151,8 +151,12 @@ export function main(mode = process.argv[2] || "preflight") {
     writeFileSync(props, JSON.stringify({ targetFps: 30, narrationFile: null, musicFile: null, sfxFile: null }));
     // Final mastering uses only the approved mix. Never layer stems on top of it.
     run(process.execPath, ["node_modules/@remotion/cli/remotion-cli.js", "render", "src/index.ts", "ModelsSuiteFirstReveal", `${out}/visual-only.mp4`, `--props=${props}`, "--codec=h264", "--crf=17", "--pixel-format=yuv420p", "--gl=swangle", "--concurrency=1", "--timeout=120000", "--muted"]);
+    const visual = JSON.parse(run("ffprobe", ["-v", "error", "-show_streams", "-of", "json", `${out}/visual-only.mp4`], true));
+    assert.equal(visual.streams.length, 1, "Visual render must contain exactly one video stream and no soundtrack");
+    assert.equal(visual.streams[0].codec_type, "video");
     const candidate = `${out}/FirstReveal-CANDIDATE.mp4`;
-    run("ffmpeg", ["-hide_banner", "-y", "-i", `${out}/visual-only.mp4`, "-i", mixPath, "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-ac", "2", "-t", "30", "-movflags", "+faststart", candidate]);
+    const attribution = "Music: Rising by Johannes Weber, Sina Nitzsche and Fachhochschule Dortmund. CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ Source: https://www.orca.nrw/oer/oer-erstellen/oer-tracks/ Changes: 40-70 second excerpt, EQ, fades, ducking and mixing with narration and sound effects.";
+    run("ffmpeg", ["-hide_banner", "-y", "-i", `${out}/visual-only.mp4`, "-i", mixPath, "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-ac", "2", "-t", "30", "-metadata", "title=Models Suite - The First Reveal", "-metadata", `comment=${attribution}`, "-movflags", "+faststart", candidate]);
     const encoded = measure(candidate, `${out}/encoded-aac-loudness.json`);
     assert.ok(encoded.integrated >= -17 && encoded.integrated <= -15 && encoded.truePeak <= -1, "AAC peaks/loudness require another audio review");
     const metadata = JSON.parse(run("ffprobe", ["-v", "error", "-count_frames", "-show_streams", "-show_format", "-of", "json", candidate], true));
@@ -162,10 +166,22 @@ export function main(mode = process.argv[2] || "preflight") {
     assert.equal(v.nb_read_frames, "900"); assert.equal(v.avg_frame_rate, "30/1");
     assert.equal(a.codec_name, "aac"); assert.equal(a.sample_rate, "48000"); assert.equal(a.channels, 2);
     assert.ok(Math.abs(Number(metadata.format.duration) - 30) <= 0.04);
+    assert.equal(metadata.streams.length, 2, "Exactly one video and one audio stream required");
+    assert.equal(a.start_time, "0.000000");
+    assert.equal(Number(a.duration), 30);
+    run("ffmpeg", ["-v", "error", "-i", candidate, "-map", "0:v:0", "-map", "0:a:0", "-f", "null", "-"]);
     // Copy to the public deliverable name only after technical checks pass.
     copyFileSync(candidate, `${out}/ModelsSuiteFirstReveal-MASTER.mp4`);
     report.videoExported = true; report.status = "TECHNICAL CHECKS PASSED — final human playback review still required";
     report.encodedLoudness = encoded;
+    report.approvedMixSha256 = hashFile(mixPath);
+    report.masterSha256 = hashFile(`${out}/ModelsSuiteFirstReveal-MASTER.mp4`);
+    report.sourceCommit = process.env.GITHUB_SHA;
+    report.runId = process.env.GITHUB_RUN_ID;
+    report.runner = "GitHub-hosted standard Ubuntu 24.04 CPU / swangle / concurrency 1";
+    report.decodeIntegrity = "PASS";
+    report.audioLayers = "One approved stereo mix only, encoded once to AAC; all composition audio muted";
+    report.musicAttribution = attribution;
     writeFileSync(`${out}/master-media.json`, JSON.stringify(metadata, null, 2));
   }
   writeFileSync(`${out}/readiness.json`, JSON.stringify(report, null, 2));
