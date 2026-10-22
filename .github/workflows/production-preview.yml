@@ -1,0 +1,45 @@
+name: Phase 2 cloud production previews
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Proofs first; full preview only after reviewing the proof outputs
+        type: choice
+        options:
+          - proof
+          - full-preview
+        default: proof
+        required: true
+permissions:
+  contents: read
+jobs:
+  produce:
+    if: github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      PRODUCTION_MODE: ${{ inputs.mode }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run verify
+      - run: npx --no-install remotion browser ensure
+      - name: Render only on GitHub standard Ubuntu
+        run: node scripts/cloud-production.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: models-suite-${{ inputs.mode }}-${{ github.run_id }}
+          path: |
+            out/*.png
+            out/*.jpg
+            out/review-*.mp4
+            out/Models-Suite-60s-visual-preview.mp4
+            out/*.json
+          retention-days: 7
+          if-no-files-found: error

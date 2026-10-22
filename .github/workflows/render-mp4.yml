@@ -1,4 +1,4 @@
-name: Future MP4 render (Phase 2 only)
+name: Approved final MP4 master (narration required)
 
 on:
   workflow_dispatch:
@@ -36,6 +36,7 @@ jobs:
         env:
           COMPOSITION_ID: ${{ inputs.composition_id }}
         run: |
+          node -e "const fs=require('node:fs');const n=JSON.parse(fs.readFileSync('production/narration.json','utf8'));if(!n.approvedFinalAudioMaster||!n.voiceFile||!fs.existsSync('public/'+n.voiceFile))throw Error('Final master blocked: approved professional narration required. Use the preview workflow.');"
           if [[ ! "$COMPOSITION_ID" =~ ^[A-Za-z0-9][A-Za-z0-9_-]*$ ]]; then
             echo "A valid composition ID is required."
             exit 1

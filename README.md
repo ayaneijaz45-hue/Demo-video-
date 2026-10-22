@@ -1,65 +1,38 @@
-# Demo-video-
+# Models Suite — One Workspace
 
-Phase 1 infrastructure for future programmatic video production.
-There are no scenes, compositions, stills, audio assets, or rendered videos.
+60-second vertical launch film. 1080 × 1920, 30 FPS, 1,800 frames.
 
-## Project
+Current audio status: **visual preview only — professional narration pending**. The user requires professional narration before final audio-master approval. No paid voice service has been activated.
 
-- Repository: https://github.com/ayaneijaz45-hue/Demo-video-
-- Branch: `main`; public visibility is required by both workflows.
-- Runtime: Node.js 24, npm, React, TypeScript, Remotion 4.0.537.
-- All Remotion packages have exact matching versions; `package-lock.json` fixes the dependency tree.
-- Official Remotion skills are already available through the installed desktop plugin. No duplicate skills are installed in this repository.
+## Editing
 
-## Local setup checks (no rendering)
+- Main composition: ModelsSuite in src/Film.tsx.
+- Each of eight scenes has its own source file and connected composition under Scenes in Studio.
+- Design primitives, palette and font loading: src/design.tsx.
+- Authentic logo: public/brand/.
+- Original music and effects: public/audio/, with reproducible synthesis in scripts/compose-score.py (Python + numpy).
+- Narration script, exact reserved windows and approval state: production/narration.json.
+- Product evidence and asset provenance: production/ASSETS-AND-CLAIMS.md.
+- Full scene timing and review notes: production/PRODUCTION.md.
 
-```sh
-npm ci --no-audit --no-fund
-npm run verify
-npm run bundle
-```
+Use Node 24 and npm ci. npm run verify checks types and version compatibility. npm run dev opens Studio without triggering a local render. Local video rendering is outside this project’s production workflow.
 
-`bundle` compiles JavaScript and copies assets; it does not generate video or frames.
-`npm run dev` is available for future Studio work. Local video rendering is outside this project's workflow.
+## Cloud rendering
 
-## Structure prepared for Phase 2
+Use **Actions → Phase 2 cloud production previews → Run workflow**.
 
-- `src/index.ts`: Remotion entry point.
-- `src/Root.tsx`: empty root with no registered compositions.
-- `src/components/`: future reusable 2D animation components.
-- `src/compositions/`: future compositions, to be added only in Phase 2.
-- `src/transitions/`: future transition components.
-- `src/three/`: future 3D components.
-- `public/audio/`, `public/images/`, `public/models/`: future static assets.
+1. Choose proof. This renders representative short ranges and ten full-resolution scene frames on the free standard Ubuntu runner.
+2. Inspect the actual outputs for cropping, typography, animation and technical failures.
+3. Only after that review, choose full-preview. This renders the complete film with original music/effects, normalizes the audio, produces an actual-output filmstrip, and checks H.264/AAC, resolution, frame count, frame rate and duration.
 
-Core Remotion supports 2D animation and audio. Install optional packages only when Phase 2 requires them: `npx remotion add @remotion/transitions` for transitions, or `npx remotion add @remotion/three` plus compatible `three`, `@react-three/fiber`, and TypeScript types for 3D. Keep every Remotion package at the same version. No GPU service or paid integration is configured. 3D/WebGL behavior remains untested.
+Download the corresponding artifact from the run page. Seven-day retention applies to Phase 2 previews. Neither workflow runs automatically on push. Both skip private repositories and use only ubuntu-24.04 standard GitHub-hosted runners with concurrency 2. No GPU, paid cloud, website deployment or product-generation API is used.
 
-## Manual cloud setup verification
+The original render-mp4 workflow is reserved for a future approved final master and now requires narration approval; it is blocked while the audio status is pending.
 
-Once these files are on `main`, open **Actions → Phase 1 setup verification (no video) → Run workflow**.
+## Scope and truth
 
-The workflow uses the GitHub-hosted standard `ubuntu-24.04` runner, Node 24 and `npm ci`. It checks TypeScript, Remotion versions, JavaScript bundling, bundled FFmpeg availability, CPU/RAM, and launching/closing an empty Chrome Headless Shell. It uploads an environment JSON report with one-day retention. No compositions are loaded and no frames or videos are rendered.
+The website repository allmodelhub-101/allmodelhub is a read-only reference. This repository contains cinematic source-based UI reconstructions with illustrative example content, not recordings or live model results. The creation graphic is original vector concept art. Model availability is not guaranteed and no partnership or instant payment claim is made. The current published conversion is one Models Suite credit = PKR 1.
 
-Standard Linux runners in public repositories are documented as 4 vCPU / 16 GB RAM and free. Both workflows skip execution if this repository becomes private. There are no push, pull-request or scheduled triggers, self-hosted runners, larger runners, deployments, or external cloud services.
+## Phase 1 evidence
 
-## Future MP4 infrastructure — do not run during Phase 1
-
-`render-mp4.yml` is prepared for Phase 2. It requires a manual trigger, an existing composition ID, and explicit `phase2_confirm=true` (default false). It will render H.264 MP4 on GitHub and upload `out/video.mp4` as a downloadable artifact with one-day retention. The current empty root cannot produce a video. Future rendering and artifact delivery are not verified until a Phase 2 test succeeds.
-
-## Authorization
-
-To publish files, the authenticated GitHub account must have write access to this repository and permission to modify workflows. To dispatch the verification workflow, it also needs Actions write access. CLI OAuth tokens commonly need `repo` and `workflow` scopes; fine-grained tokens need repository Contents and Workflows write access plus Actions write for dispatch. Never commit tokens.
-
-## Phase 1 verification record
-
-The [setup verification run 39737522841](https://github.com/ayaneijaz45-hue/Demo-video-/actions/runs/39737522841) succeeded on 22 October 2026 against infrastructure commit `1b0808454fddc1fbd7a400f12e914f7648b3ff51`. It measured 4 vCPUs and 15.61 GiB RAM on the GitHub-hosted Linux x64 runner with Node.js v24.21.0. Dependency installation, TypeScript, Remotion version checks, JavaScript bundling, FFmpeg version, empty browser launch, and environment report upload all passed. The environment report was also downloaded successfully.
-
-Phase 1 infrastructure is ready to receive Phase 2 requirements. No video or frames were generated or rendered. MP4 encoding and future composition/3D behavior remain untested. The future render workflow has not been dispatched.
-
-## Official references
-
-- [Remotion manual installation](https://www.remotion.dev/docs/brownfield)
-- [Remotion package version checks](https://www.remotion.dev/docs/cli/versions)
-- [Remotion browser management](https://www.remotion.dev/docs/cli/browser)
-- [GitHub standard runner specifications](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)
-- [GitHub workflow artifacts](https://docs.github.com/en/actions/tutorials/store-and-share-data)
+[Setup verification run 39737522841](https://github.com/ayaneijaz45-hue/Demo-video-/actions/runs/39737522841) succeeded on 22 October 2026: 4 vCPUs, 15.61 GiB RAM, Node 24.21.0, dependency installation, compilation, FFmpeg and empty browser launch. The manual no-video setup-verification workflow remains available.

@@ -1,0 +1,17 @@
+{
+  "status": "AWAITING_PROFESSIONAL_NARRATION",
+  "approvedFinalAudioMaster": false,
+  "voiceFile": null,
+  "language": "English",
+  "direction": "Calm, assured, conversational. Human warmth; no exaggerated announcer delivery. Leave each reserved gap intact.",
+  "cues": [
+    {"scene":"Hook","start":0.7,"end":3.4,"script":"Too many AI tools? Bring your ideas together."},
+    {"scene":"Reveal","start":6.0,"end":9.8,"script":"Meet Models Suite. Your connected AI workspace."},
+    {"scene":"Intelligence","start":13.0,"end":18.3,"script":"Choose a leading model. Or let Auto Best route your next task."},
+    {"scene":"Model Battle","start":20.8,"end":26.7,"script":"One prompt. Different perspectives. Compare the answers, and choose your favorite."},
+    {"scene":"Creation","start":29.0,"end":37.9,"script":"Start with a thought. Shape it into an image. Explore video. Give it a voice."},
+    {"scene":"Pricing","start":40.8,"end":46.6,"script":"Simple credits. One credit equals one rupee. Review media estimates before you create."},
+    {"scene":"Localization","start":48.7,"end":52.9,"script":"English. Urdu. Roman Urdu. Global AI, with local simplicity."},
+    {"scene":"Finale","start":54.7,"end":58.7,"script":"Models Suite. Every leading AI. One PKR wallet."}
+  ]
+}
