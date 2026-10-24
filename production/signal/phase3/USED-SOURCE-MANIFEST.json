@@ -1,0 +1,266 @@
+[
+  {
+    "id": "VSCO-LICENSE",
+    "path": "vsco\\LICENSE",
+    "originalPath": "LICENSE",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673",
+    "bytes": 6555
+  },
+  {
+    "id": "VSCO-README.md",
+    "path": "vsco\\README.md",
+    "originalPath": "README.md",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/README.md",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "8fbf399338661e6c76585ad9e75eb10324f823935168e0567553293a83f200a0",
+    "bytes": 751
+  },
+  {
+    "id": "VSCO-Marimba_hit_Outrigger_C4_loud_01.wav",
+    "path": "vsco\\Percussion\\Marimba\\Marimba_hit_Outrigger_C4_loud_01.wav",
+    "originalPath": "Percussion/Marimba/Marimba_hit_Outrigger_C4_loud_01.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Marimba/Marimba_hit_Outrigger_C4_loud_01.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "4af539d47a452d7fad26e171b1c8adcca272cee97191f040d192680462c880b8",
+    "bytes": 1016564
+  },
+  {
+    "id": "VSCO-glock_medium_C5.wav",
+    "path": "vsco\\Percussion\\Glock\\glock_medium_C5.wav",
+    "originalPath": "Percussion/Glock/glock_medium_C5.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Glock/glock_medium_C5.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "635f898e0bcb6975b96b18efd9c896f6f1b97ff12174a339ada4814e49675660",
+    "bytes": 1271310
+  },
+  {
+    "id": "VSCO-BDrumNewhit_v5_rr1_Sum.wav",
+    "path": "vsco\\Percussion\\BDrumNewhit_v5_rr1_Sum.wav",
+    "originalPath": "Percussion/BDrumNewhit_v5_rr1_Sum.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/BDrumNewhit_v5_rr1_Sum.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "642aaf3375eaff1307973f7de3ccbf74d18e71fb3cf9412e021b08fc3bf1981c",
+    "bytes": 588092
+  },
+  {
+    "id": "VSCO-Snare2-HitNS_v1_rr1_Sum.wav",
+    "path": "vsco\\Percussion\\Snare2-HitNS_v1_rr1_Sum.wav",
+    "originalPath": "Percussion/Snare2-HitNS_v1_rr1_Sum.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Snare2-HitNS_v1_rr1_Sum.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "cb715753d4ff2ae82670d658b273731d4b38afb51143e9e38c3b393094ab40a4",
+    "bytes": 237194
+  },
+  {
+    "id": "VSCO-Claves1_Hit_v1_rr1_Sum.wav",
+    "path": "vsco\\Percussion\\Claves1_Hit_v1_rr1_Sum.wav",
+    "originalPath": "Percussion/Claves1_Hit_v1_rr1_Sum.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Claves1_Hit_v1_rr1_Sum.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "569812aca160bf35d71ac16e678f5528b2093ece086300cd97a0064e17d23f20",
+    "bytes": 199848
+  },
+  {
+    "id": "VSCO-Guiro-Fast_v1_Sum.wav",
+    "path": "vsco\\Percussion\\Guiro-Fast_v1_Sum.wav",
+    "originalPath": "Percussion/Guiro-Fast_v1_Sum.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Guiro-Fast_v1_Sum.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "d56a487fb74d3042a847e237c8bdf8a2857772b987d712336986e5499aced5c7",
+    "bytes": 267144
+  },
+  {
+    "id": "VSCO-BrakeDrum1_Hammer_v2_Sum.wav",
+    "path": "vsco\\Percussion\\BrakeDrum1_Hammer_v2_Sum.wav",
+    "originalPath": "Percussion/BrakeDrum1_Hammer_v2_Sum.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/BrakeDrum1_Hammer_v2_Sum.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "ceb398df6b2b0e021836d5857fd4ec620c26aa19ecb7dd74266172748e976043",
+    "bytes": 282756
+  },
+  {
+    "id": "VSCO-Anvil_Hit1_v2_Sum.wav",
+    "path": "vsco\\Percussion\\Anvil_Hit1_v2_Sum.wav",
+    "originalPath": "Percussion/Anvil_Hit1_v2_Sum.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Anvil_Hit1_v2_Sum.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "dfef593c86cb8ce18ee38b249dffc07f7c5ebb176ec827530bb3f80ce5aaec7d",
+    "bytes": 267524
+  },
+  {
+    "id": "VSCO-susCymb1-bow-1.wav",
+    "path": "vsco\\Percussion\\susCymb1-bow-1.wav",
+    "originalPath": "Percussion/susCymb1-bow-1.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/susCymb1-bow-1.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "181f906018e2cc53a82eb73f209894fa07a4b1fb8718aa5b38ad0e15610489d3",
+    "bytes": 2873478
+  },
+  {
+    "id": "VSCO-bassdrum_rub1_v1.wav",
+    "path": "vsco\\Percussion\\bassdrum_rub1_v1.wav",
+    "originalPath": "Percussion/bassdrum_rub1_v1.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/bassdrum_rub1_v1.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "e906d63ab502971dfaefab6e2032332db327ba4b0cfe75101aef6d099fcb7df1",
+    "bytes": 813882
+  },
+  {
+    "id": "VSCO-KSHarp_D4_mf.wav",
+    "path": "vsco\\Strings\\Harp\\KSHarp_D4_mf.wav",
+    "originalPath": "Strings/Harp/KSHarp_D4_mf.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_D4_mf.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7",
+    "bytes": 1921690
+  },
+  {
+    "id": "VSCO-BKCtbss_Pizz_C1_v3_rr1.wav",
+    "path": "vsco\\Strings\\Solo Contrabass\\Pizz\\BKCtbss_Pizz_C1_v3_rr1.wav",
+    "originalPath": "Strings/Solo Contrabass/Pizz/BKCtbss_Pizz_C1_v3_rr1.wav",
+    "sourceUrl": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Contrabass/Pizz/BKCtbss_Pizz_C1_v3_rr1.wav",
+    "sourceRevision": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "license": "CC0-1.0",
+    "licensePath": "vsco/LICENSE",
+    "sha256": "706d82ca773408bb6cd6f22466d5d017c1d36a9055f3a6b6af864407b26c5a0d",
+    "bytes": 400396
+  },
+  {
+    "id": "KENNEY-impactGlass_light_000",
+    "path": "kenney\\Audio\\impactGlass_light_000.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "d750cf88097d0c3e69920e6e14496e1444e1a9da01aa4cca8f5ec8cb44c57b4f",
+    "bytes": 6526
+  },
+  {
+    "id": "KENNEY-impactGlass_light_001",
+    "path": "kenney\\Audio\\impactGlass_light_001.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "05e513fbd42829060eb37855f8c3866722ec5c39a8937c9bfde518cc609effa2",
+    "bytes": 6544
+  },
+  {
+    "id": "KENNEY-impactGlass_light_002",
+    "path": "kenney\\Audio\\impactGlass_light_002.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "710db7451bb7857b9140dfe6afe4621ea2188ad65eda3919c569d1bb285b933d",
+    "bytes": 6562
+  },
+  {
+    "id": "KENNEY-impactMetal_light_000",
+    "path": "kenney\\Audio\\impactMetal_light_000.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+    "bytes": 7651
+  },
+  {
+    "id": "KENNEY-impactMetal_light_001",
+    "path": "kenney\\Audio\\impactMetal_light_001.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "fba69c467ddd85da7b1d82e259f936b876d9ba6a3d6f1b24bdd10468e46bfe08",
+    "bytes": 6967
+  },
+  {
+    "id": "KENNEY-impactMetal_light_002",
+    "path": "kenney\\Audio\\impactMetal_light_002.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "25a96f90a9a1f88a531e824e126f0519504625e5635e65a72e4f31611428db29",
+    "bytes": 6804
+  },
+  {
+    "id": "KENNEY-impactMetal_light_003",
+    "path": "kenney\\Audio\\impactMetal_light_003.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "92d5db6bfc672d9dc1b4f390b2900504f013187fa36335472554fafefa9050b1",
+    "bytes": 9023
+  },
+  {
+    "id": "KENNEY-impactPlate_heavy_001",
+    "path": "kenney\\Audio\\impactPlate_heavy_001.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "142fd6c77f13d25f318265901163f70f8dfe12f87829169a570025be43de7011",
+    "bytes": 8713
+  },
+  {
+    "id": "KENNEY-impactSoft_heavy_002",
+    "path": "kenney\\Audio\\impactSoft_heavy_002.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "d130ae541951243d3f6ed963d0057450a445ffe117fbf9a084d34eb1635cb563",
+    "bytes": 6749
+  },
+  {
+    "id": "KENNEY-impactTin_medium_001",
+    "path": "kenney\\Audio\\impactTin_medium_001.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "84253095543c094d83cd749f42ecfbc96e356b60385f18a192c18eafb25b3cc6",
+    "bytes": 6603
+  },
+  {
+    "id": "KENNEY-impactWood_light_003",
+    "path": "kenney\\Audio\\impactWood_light_003.ogg",
+    "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0-1.0",
+    "licensePath": "kenney/License.txt",
+    "sha256": "cdfbe8af2fe7ff9ee28f337a0a989deee0f327620da456c8413644880e9d0004",
+    "bytes": 6381
+  }
+]

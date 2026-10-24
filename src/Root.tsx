@@ -9,9 +9,11 @@ import { Pricing } from "./scenes/Pricing";
 import { Localization } from "./scenes/Localization";
 import { Finale } from "./scenes/Finale";
 import { FirstRevealRegistrations } from "./first-reveal/Registration";
+import { SignalRegistrations } from "./signal/Registration";
 
 export const RemotionRoot = () => (
   <>
+    <SignalRegistrations />
     <FirstRevealRegistrations />
     <Composition
       id="ModelsSuite"

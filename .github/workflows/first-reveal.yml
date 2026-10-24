@@ -10,6 +10,7 @@ on:
           - refine
           - proof60
           - logo-polish
+          - signal-opening
         default: proof
         required: true
 permissions:
@@ -32,12 +33,33 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run verify
       - run: npx --no-install remotion browser ensure
+      - name: Stage the private SIGNAL workspace capture
+        if: inputs.mode == 'signal-opening'
+        env:
+          SIGNAL_UI_1: ${{ secrets.SIGNAL_PHASE3_UI_1 }}
+          SIGNAL_UI_2: ${{ secrets.SIGNAL_PHASE3_UI_2 }}
+          SIGNAL_UI_3: ${{ secrets.SIGNAL_PHASE3_UI_3 }}
+          SIGNAL_UI_4: ${{ secrets.SIGNAL_PHASE3_UI_4 }}
+          SIGNAL_UI_5: ${{ secrets.SIGNAL_PHASE3_UI_5 }}
+        run: |
+          node -e "const fs=require('node:fs');const p='public/signal/private';fs.mkdirSync(p,{recursive:true});const s=[1,2,3,4,5].map(n=>process.env['SIGNAL_UI_'+n]||'').join('');if(!s)throw Error('Private capture missing');fs.writeFileSync(p+'/workspace.png',Buffer.from(s,'base64'));"
       - name: Short CPU proofs — never a premature audio master
+        if: inputs.mode != 'signal-opening'
         run: node scripts/first-reveal-cloud.mjs
+      - name: SIGNAL — six-second opening with Phase 2 audio
+        if: inputs.mode == 'signal-opening'
+        run: node scripts/signal-opening-cloud.mjs
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && inputs.mode != 'signal-opening'
         with:
           name: first-reveal-${{ inputs.mode }}-${{ github.run_id }}
           path: out/first-reveal/
           retention-days: 7
           if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: inputs.mode == 'signal-opening'
+        with:
+          name: signal-phase3-opening-${{ github.run_id }}
+          path: out/signal-phase3/
+          retention-days: 7
+          if-no-files-found: error

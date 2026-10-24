@@ -1,0 +1,72 @@
+{
+  "status": "Complete source-based REVIEW mix; human auditory approval remains pending; not a final professionally auditioned master",
+  "durationSeconds": 24,
+  "sampleRate": 48000,
+  "channels": 2,
+  "bits": 24,
+  "framesPerChannel": 1152000,
+  "bpm": 150,
+  "bars": 15,
+  "targetLUFS": -16,
+  "targetTruePeakDBTP": -1.5,
+  "preMasterMeasurement": {
+    "input_i": "-31.96",
+    "input_tp": "-12.92",
+    "input_lra": "6.30",
+    "input_thresh": "-42.41",
+    "output_i": "-15.17",
+    "output_tp": "-1.50",
+    "output_lra": "4.80",
+    "output_thresh": "-25.44",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.83"
+  },
+  "linearGainDB": 11.37,
+  "finalMeasurement": {
+    "input_i": "-15.92",
+    "input_tp": "-1.46",
+    "input_lra": "6.30",
+    "input_thresh": "-26.39",
+    "output_i": "-15.02",
+    "output_tp": "-1.50",
+    "output_lra": "4.90",
+    "output_thresh": "-25.30",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.98"
+  },
+  "samplePeakDBFS": -1.57049090122769,
+  "clippedSamples": 0,
+  "stems": "Six common-gain stems sum to the delivered review WAV (quantization tolerance). Musical substems are raw arrangement parts before mix automation.",
+  "sources": "Only Kenney/VSCO CC0 recordings and original edits/arrangement. No ElevenLabs, Soundly, reference or First Reveal media in this mix.",
+  "foregroundFiles": 28,
+  "cueCount": 31,
+  "importantLimits": [
+    "Reference-level subjective sound quality is not certified by numerical checks.",
+    "Air is designed from bowed/rubbed recorded percussion, not a literal camera-pass field recording.",
+    "Mechanical textures are designed from impact/percussion recordings; dedicated real sliding-guide and latch Foley can improve the final mix.",
+    "Current interpretation is a sample-based electronic/percussive score, not the unverified ElevenLabs score."
+  ],
+  "peakManagement": {
+    "additionalGainDB": 4.8,
+    "ceilingDBFS": -1.65,
+    "detector": "linked stereo 1ms blocks",
+    "advanceSeconds": 0.005,
+    "releaseSeconds": 0.08,
+    "maximumReductionDB": 4.890618111930232,
+    "fractionOfBlocksWithOver1dBReduction": 0.005458333333333333,
+    "sharedEnvelope": "session/shared-master-gain-48000.npy",
+    "dynamicAlternative": "session/SIGNAL-dynamic-alternative-24s.wav",
+    "note": "Initial linear-only version retained. Limited review still needs human auditory approval."
+  },
+  "meaningfulQC": {
+    "stereoCorrelation": 0.8204367160747518,
+    "monoToStereoRMSDB": -0.41503129661867355,
+    "maximumStemSumErrorLinear": 2.384185791015625e-07,
+    "maximumStemSumErrorDBFS": -132.45319809215172,
+    "maximumPeakTimeSeconds": 14.410979166666667,
+    "heroWindowPeakDBFS": -1.57049090122769,
+    "anticipationSilencePeakDBFS": -78.78793834297787,
+    "lastSampleAbsolute": 0.0,
+    "allMainStemsLengthSamples": 1152000
+  }
+}
