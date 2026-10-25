@@ -11,9 +11,11 @@ import { Finale } from "./scenes/Finale";
 import { FirstRevealRegistrations } from "./first-reveal/Registration";
 import { SignalRegistrations } from "./signal/Registration";
 import { CorrectionRegistrations } from "./signal-correction/Registration";
+import { RefinementRegistrations } from "./signal-refinement/Registration";
 
 export const RemotionRoot = () => (
   <>
+    <RefinementRegistrations />
     <CorrectionRegistrations />
     <SignalRegistrations />
     <FirstRevealRegistrations />
