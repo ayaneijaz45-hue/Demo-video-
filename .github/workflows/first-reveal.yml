@@ -19,7 +19,7 @@ jobs:
   proof:
     if: github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: ${{ inputs.mode == 'signal-opening' && 60 || 35 }}
     env:
       REVEAL_MODE: ${{ inputs.mode }}
     steps:
@@ -57,7 +57,7 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
       - uses: actions/upload-artifact@v4
-        if: inputs.mode == 'signal-opening'
+        if: always() && inputs.mode == 'signal-opening'
         with:
           name: signal-phase3-opening-${{ github.run_id }}
           path: out/signal-phase3/

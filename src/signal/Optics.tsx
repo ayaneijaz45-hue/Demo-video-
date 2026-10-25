@@ -7,6 +7,8 @@ import {COLORS} from './motion';
 export const metal=new MeshStandardMaterial({color:'#C1CDD1',metalness:1,roughness:.18});
 export const darkMetal=new MeshStandardMaterial({color:'#202E3B',metalness:.90,roughness:.22});
 export const glass=new MeshPhysicalMaterial({color:'#A4E6EE',metalness:.04,roughness:.12,transmission:.76,thickness:.15,ior:1.46,transparent:true,opacity:.93,attenuationColor:new Color('#55CBD7'),attenuationDistance:2.0,clearcoat:1,clearcoatRoughness:.08,side:DoubleSide});
+// The small corridor edge inlays use reflective transparency; the source spine retains transmission.
+export const edgeGlass=new MeshPhysicalMaterial({color:'#A4E6EE',metalness:.12,roughness:.13,transparent:true,opacity:.50,clearcoat:1,clearcoatRoughness:.08,side:DoubleSide});
 export const ceramic=new MeshStandardMaterial({color:COLORS.ivory,metalness:.02,roughness:.30});
 export const cyanCore=new MeshStandardMaterial({color:'#2B9EB7',emissive:'#124457',emissiveIntensity:.25,metalness:.2,roughness:.15});
 export const violetCore=new MeshStandardMaterial({color:'#8173D5',emissive:'#312554',emissiveIntensity:.15,metalness:.2,roughness:.18});

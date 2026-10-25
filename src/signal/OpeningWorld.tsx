@@ -2,7 +2,7 @@ import React,{useLayoutEffect,useMemo} from 'react';
 import {useThree,useLoader} from '@react-three/fiber';
 import {useCurrentFrame,useVideoConfig,staticFile} from 'remotion';
 import {PerspectiveCamera,TextureLoader,SRGBColorSpace,DoubleSide} from 'three';
-import {BeveledBar,ceramic,darkMetal,ExtrudedSpine,Gate,glass,metal,SignalRoute,StudioReflection} from './Optics';
+import {BeveledBar,ceramic,darkMetal,edgeGlass,ExtrudedSpine,Gate,glass,metal,SignalRoute,StudioReflection} from './Optics';
 import {KineticWord} from './Typography';
 import {cameraAt,cameraQuaternion,clamp,COLORS,ease,FOCAL_Z,mix,ramp,smooth} from './motion';
 
@@ -62,8 +62,8 @@ const OpticalCorridor:React.FC<{time:number}>=({time:t})=>{
         const w=mix(5.6,4.42,converge),h=mix(6.4,4.02,converge);
         return <group key={i} position={[0,-.85,gz]} rotation={[0,mix((i%2===0?.025:-.025),0,converge),0]} scale={[mix(1,.999,converge),1,1]}>
           <Gate position={[mix(0,(i%2===0?-12:12),departure),0,0]} width={w} height={h} rotation={[0,departure*(i%2===0?-.95:.95),0]}/>
-          <BeveledBar position={[mix(-2.55,-12,departure),0,-.14]} size={[.12,mix(6.05,3.8,converge),.4]} material={glass}/>
-          <BeveledBar position={[mix(2.55,12,departure),0,-.14]} size={[.12,mix(6.05,3.8,converge),.4]} material={glass}/>
+          <BeveledBar position={[mix(-2.55,-12,departure),0,-.14]} size={[.12,mix(6.05,3.8,converge),.4]} material={edgeGlass}/>
+          <BeveledBar position={[mix(2.55,12,departure),0,-.14]} size={[.12,mix(6.05,3.8,converge),.4]} material={edgeGlass}/>
         </group>;
       })}
     </group>

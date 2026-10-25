@@ -1,17 +1,19 @@
 {
   "campaign": "SIGNAL / One Idea. Many Directions.",
   "proof": {
-    "composition": "SignalOpening6",
+    "composition": "SignalOpening6Review30",
     "entry": "src/signal/index.ts",
-    "fps": 60,
-    "frames": 360,
+    "fps": 30,
+    "frames": 180,
     "width": 1080,
     "height": 1920,
     "durationSeconds": 6,
     "frameRangeInclusive": [
       0,
-      359
-    ]
+      179
+    ],
+    "designGridFPS": 60,
+    "designGridFrames": 360
   },
   "continuity": {
     "workspaceShotEndFrame": 420,
@@ -324,7 +326,7 @@
   "render": {
     "engine": "Remotion 4.0.537 + Three.js",
     "motionBlur": {
-      "samples": 3,
+      "samples": 2,
       "shutterAngle": 100,
       "scope": "3D moving geometry and camera; held glyph vector faces and official identity remain sharp"
     },
@@ -332,7 +334,8 @@
     "video": "H.264 CRF16 yuv420p",
     "audioCodec": "AAC 320k stereo 48k",
     "workflow": "first-reveal.yml, mode=signal-opening",
-    "budget": "Existing public standard GitHub-hosted Ubuntu only; no paid generation or renderer"
+    "budget": "Existing public standard GitHub-hosted Ubuntu only; no paid generation or renderer",
+    "fallbackReason": "Native 60fps / 3-sample attempt reached the original 35-minute job limit at 248 of 360 frames. Native 30fps / 2 samples selected under the brief. Secondary corridor inlays use reflective transparency; source spine remains transmissive."
   },
   "fontImplementation": "Barlow Condensed Bold, SIL OFL 1.1, resolves Phase 1 proprietary Bahnschrift study embedding question. Cap heights/left alignment/word grouping preserved; glyph outlines become real bevelled solids."
 }

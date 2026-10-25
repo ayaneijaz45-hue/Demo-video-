@@ -45,6 +45,7 @@ export const SignalOpening:React.FC<SignalProps>=({offsetSeconds=0,audio=true,bl
 };
 
 export const SignalRegistrations=()=> <Folder name="SIGNAL">
+  <Composition id="SignalOpening6Review30" component={SignalOpening} width={1080} height={1920} fps={30} durationInFrames={180} defaultProps={{offsetSeconds:0,audio:true,blurSamples:2}}/>
   <Composition id="SignalOpening6" component={SignalOpening} width={1080} height={1920} fps={60} durationInFrames={360} defaultProps={{offsetSeconds:0,audio:true,blurSamples:3}}/>
   <Composition id="SignalOneIdea" component={SignalOpening} width={1080} height={1920} fps={60} durationInFrames={132} defaultProps={{offsetSeconds:0,audio:false,blurSamples:3}}/>
   <Composition id="SignalManyModels" component={SignalOpening} width={1080} height={1920} fps={60} durationInFrames={144} defaultProps={{offsetSeconds:2.2,audio:false,blurSamples:3}}/>
