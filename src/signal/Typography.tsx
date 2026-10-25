@@ -45,8 +45,10 @@ export const KineticWord:React.FC<KineticWordProps>=({text,capHeight,position,ti
     if(p<=0&&time<arrival-.15)return null;
     const lateral=formation==='rail'?mix(-.18,0,p):mix(.07,0,p);
     const depart=clamp(fold);
+    // Keep D/E/A and the first line clear of the camera entering the I seam.
+    const exitX=(text==='ONE'||text==='IDEA.')?g.x+3.5:g.x*.16;
     return <mesh key={`${text}-${i}`} renderOrder={1000} geometry={g.geometry} material={[tone==='light'?frontLight:frontDark,bevel]}
-      position={[mix(g.x,g.x*.16,depart)+lateral,mix(formation==='rail'?-capHeight*.62:.16,0,p)+depart*(i%2===0?.11:-.09),mix(-.9,0,p)-depart*(.4+g.x)]}
+      position={[mix(g.x,exitX,depart)+lateral,mix(formation==='rail'?-capHeight*.62:.16,0,p)+depart*(i%2===0?.11:-.09),mix(-.9,0,p)-depart*(.4+g.x)]}
       rotation={[mix(formation==='rail'?.22:-.08,0,p),mix(-Math.PI/2+.04,0,p)+depart*.85,0]}
       scale={[1,1,mix(3.8,1,p)]}/>
   })}</group>;
