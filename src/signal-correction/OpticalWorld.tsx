@@ -38,7 +38,7 @@ function useOpticalMeshes(){
 export const OpticalWorld:React.FC=()=>{
  const frame=useCurrentFrame(),{fps}=useVideoConfig(),t=frame/fps;
  const {camera,scene}=useThree();const meshes=useOpticalMeshes();
- const petals=useMemo(()=>[0,1,2].map(i=>{const source=meshes[`SIGNAL_Petal_${i}`];return {g:source.clone(),source:new Float32Array(source.attributes.position.array)};}),[meshes]);
+ const petals=useMemo(()=>[0,1,2].map(i=>{const source=meshes[`SIGNAL_Petal_${i}`],g=source.clone();g.setAttribute('tangent',new Float32BufferAttribute(new Float32Array(source.attributes.position.count*4),4));return {g,source:new Float32Array(source.attributes.position.array)};}),[meshes]);
  useEffect(()=>()=>petals.forEach(p=>p.g.dispose()),[petals]);
  const many=ease(t,2.08,2.38),unify=ease(t,4.34,4.85),reveal=out(t,0,.8);
  const bg=new Color('#101923').lerp(new Color('#dce5e4'),many*(1-unify));
@@ -55,6 +55,21 @@ export const OpticalWorld:React.FC=()=>{
    p.setXYZ(n,lerp(x,tx,unfold),lerp(y,ty,unfold),lerp(z,tz,unfold));
   }
   p.needsUpdate=true;g.computeVertexNormals();
+  // Authored along-surface tangents keep anisotropic reflections valid without UV maps.
+  // They deform with the ribbon, then project into each updated normal plane.
+  const normals=g.attributes.normal,tangents=g.attributes.tangent;
+  for(let n=0;n<p.count;n++){
+   const x=source[n*3],z=source[n*3+2];let a=Math.atan2(-z,x);while(a<start-.03)a+=Math.PI*2;while(a>start+Math.PI*2)a-=Math.PI*2;
+   const u=Math.max(0,Math.min(1,(a-start)/(.62*Math.PI))),phase=u*Math.PI*2+k*.85;
+   let tx=lerp(-Math.sin(a)*4.2,4.4,unfold),ty=lerp(.28*Math.PI*2*Math.cos(u*Math.PI*2),.7*Math.PI*2*Math.cos(phase),unfold),tz=lerp(-Math.cos(a)*4.2,-.7*Math.PI*2*Math.sin(phase),unfold);
+   const nx=normals.getX(n),ny=normals.getY(n),nz=normals.getZ(n),dot=tx*nx+ty*ny+tz*nz;
+   tx-=nx*dot;ty-=ny*dot;tz-=nz*dot;
+   let length=Math.hypot(tx,ty,tz);
+   if(length<1e-7){if(Math.abs(nx)<.8){tx=0;ty=nz;tz=-ny;}else{tx=-nz;ty=0;tz=nx;}length=Math.hypot(tx,ty,tz);}
+   if(length<1e-7){tx=1;ty=0;tz=0;length=1;}
+   tangents.setXYZW(n,tx/length,ty/length,tz/length,1);
+  }
+  tangents.needsUpdate=true;
  });
  const heroY=lerp(-.8,1.25,unify),heroScale=lerp(1.8,1,reveal)*(1-.64*many*(1-unify));
  const pose=lerp(lerp(lerp(-.95,.12,reveal)+.12*t,-.2+.12*t,many),-.4+.1*(t-4.6),unify);
