@@ -95,7 +95,7 @@ export const OpticalWorld:React.FC=()=>{
   }p.needsUpdate=true;s.g.computeVertexNormals();tangent(s.g,s.dirs);
  });
  const coreProgress=ease(t,1.76,2.6),coreZ=lerp(-.7,-20,coreProgress);
- const coreScale=(.02+.98*out(t,.1,.6))*(1-.53*coreProgress*(1-final));
+ const coreScale=(.02+.98*out(t,.1,.6))*(1-.94*coreProgress*(1-final));
  const beamFade=(1-ease(t,1.45,1.85));
  return <>
   <OpticalLighting cameraZ={camZ}/><OpticalStage/>
@@ -109,8 +109,8 @@ export const OpticalWorld:React.FC=()=>{
   </group>:null}
   <TypeSculpture text="ONE" size={1.16} t={t} enter={.4} exit={1.76} position={[-.08,.75,1.35]}/>
   <TypeSculpture text="IDEA." size={1.65} t={t} enter={.8} exit={1.86} position={[0,-1.04,1.45]}/>
-  <TypeSculpture text="MANY AI" size={1.18} t={t} enter={2.2} exit={4.24} position={[-.04,.65,-10.45]} angle={-.065}/>
-  <TypeSculpture text="MODELS." size={1.27} t={t} enter={2.6} exit={4.28} position={[.02,-.96,-10.25]} angle={-.065}/>
+  <TypeSculpture text="MANY AI" size={1.18} maxWidth={3.2} t={t} enter={2.2} exit={4.24} position={[-.04,.65,-10.45]} angle={-.065}/>
+  <TypeSculpture text="MODELS." size={1.27} maxWidth={3.2} t={t} enter={2.6} exit={4.28} position={[.02,-.96,-10.25]} angle={-.065}/>
   <TypeSculpture text="ONE" size={.9} t={t} enter={4.6} exit={7} position={[0,.35,-17.65]} angle={.025}/>
   <TypeSculpture text="WORKSPACE." size={.94} t={t} enter={4.72} exit={7} position={[0,-.72,-17.5]} angle={.025}/>
  </>;
