@@ -11,6 +11,7 @@ on:
           - proof60
           - logo-polish
           - signal-opening
+          - signal-correction
         default: proof
         required: true
 permissions:
@@ -19,7 +20,7 @@ jobs:
   proof:
     if: github.repository == 'ayaneijaz45-hue/Demo-video-' && github.event.repository.private == false
     runs-on: ubuntu-24.04
-    timeout-minutes: ${{ inputs.mode == 'signal-opening' && 60 || 35 }}
+    timeout-minutes: ${{ (inputs.mode == 'signal-opening' || inputs.mode == 'signal-correction') && 60 || 35 }}
     env:
       REVEAL_MODE: ${{ inputs.mode }}
     steps:
@@ -44,13 +45,13 @@ jobs:
         run: |
           node -e "const fs=require('node:fs');const p='public/signal/private';fs.mkdirSync(p,{recursive:true});const s=[1,2,3,4,5].map(n=>process.env['SIGNAL_UI_'+n]||'').join('');if(!s)throw Error('Private capture missing');fs.writeFileSync(p+'/workspace.png',Buffer.from(s,'base64'));"
       - name: Short CPU proofs — never a premature audio master
-        if: inputs.mode != 'signal-opening'
+        if: inputs.mode != 'signal-opening' && inputs.mode != 'signal-correction'
         run: node scripts/first-reveal-cloud.mjs
       - name: SIGNAL — six-second opening with Phase 2 audio
         if: inputs.mode == 'signal-opening'
         run: node scripts/signal-opening-cloud.mjs
       - uses: actions/upload-artifact@v4
-        if: always() && inputs.mode != 'signal-opening'
+        if: always() && inputs.mode != 'signal-opening' && inputs.mode != 'signal-correction'
         with:
           name: first-reveal-${{ inputs.mode }}-${{ github.run_id }}
           path: out/first-reveal/
@@ -61,5 +62,15 @@ jobs:
         with:
           name: signal-phase3-opening-${{ github.run_id }}
           path: out/signal-phase3/
+          retention-days: 7
+          if-no-files-found: error
+      - name: SIGNAL corrected optical opening — approved audio
+        if: inputs.mode == 'signal-correction'
+        run: node scripts/signal-correction-cloud.mjs
+      - uses: actions/upload-artifact@v4
+        if: always() && inputs.mode == 'signal-correction'
+        with:
+          name: signal-correction-${{ github.run_id }}
+          path: out/signal-correction/
           retention-days: 7
           if-no-files-found: error

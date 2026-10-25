@@ -1,0 +1,188 @@
+{
+  "projectId": "prj_cvmk9w4e4znzzshfdj3q",
+  "revisionId": "rev_57fexqsna84d460gr5v2",
+  "blenderVersion": "5.2.0",
+  "execution": "Native Blender mesh operations; scripting disabled",
+  "glbArtifact": "art_efsvtp9n1nk140tthbrg",
+  "blendArtifact": "art_4xgnq72bhmf98x1zp6et",
+  "validationJob": "job_fyk2yhqn5b3bwp2ahhnm",
+  "validationSummary": {
+    "summaryVersion": 3,
+    "profile": "general",
+    "checked": true,
+    "issueCounts": {
+      "total": 0,
+      "error": 0,
+      "warning": 0,
+      "info": 0,
+      "unknown": 0
+    },
+    "checkedObjects": 4,
+    "sections": {
+      "issues": 0,
+      "objects": 4,
+      "printObjects": null
+    },
+    "geometry": {
+      "watertight": {
+        "checked": 4,
+        "passed": 4,
+        "failed": 0
+      },
+      "zeroAreaFaces": {
+        "checked": 4,
+        "affected": 0,
+        "total": 0
+      },
+      "degenerateEdges": {
+        "checked": 4,
+        "affected": 0,
+        "total": 0
+      },
+      "interiorFaces": {
+        "checked": 0,
+        "affected": 0,
+        "total": 0
+      }
+    },
+    "depthSampling": {
+      "state": "complete",
+      "samplesCompleted": 0,
+      "resumable": false
+    },
+    "coverage": {
+      "version": 1,
+      "complete": true,
+      "checks": [
+        {
+          "check": "NOT_WATERTIGHT",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4
+        },
+        {
+          "check": "NON_MANIFOLD_EDGES",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4
+        },
+        {
+          "check": "DEGENERATE_FACES",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4
+        },
+        {
+          "check": "DEGENERATE_EDGES",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4
+        },
+        {
+          "check": "LOOSE_GEOMETRY",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4
+        },
+        {
+          "check": "NO_ACTIVE_CAMERA",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 0,
+          "checkedObjects": 0,
+          "checkedScenes": 1
+        },
+        {
+          "check": "OBJECTS_INTERSECT",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4,
+          "candidatePairs": 4,
+          "checkedPairs": 4,
+          "totalPossiblePairs": 6,
+          "broadphaseComparisons": 5,
+          "maxBroadphaseComparisons": 200000,
+          "maxCandidatePairs": 20000,
+          "builtTrees": 4,
+          "evaluatedTriangles": 12620,
+          "maxTriangles": 500000,
+          "maxTreeTriangles": 100000,
+          "pairTriangleWork": 21460,
+          "maxPairTriangleWork": 8000000,
+          "depthSamples": 0,
+          "maxDepthSamples": 32000,
+          "elapsedMs": 38,
+          "candidatePairsComplete": true,
+          "depthSamplesComplete": true,
+          "maxSeconds": 20,
+          "method": "evaluated world-space surface BVH with inward contact offset; fully contained solids without surface crossings are not checked",
+          "remainingCandidatePairs": 0
+        },
+        {
+          "check": "NO_UV_LAYERS",
+          "status": "skipped",
+          "requested": false,
+          "applicableObjects": 4,
+          "checkedObjects": 0,
+          "reason": "not requested by this profile or additionalChecks"
+        },
+        {
+          "check": "FACES_ON_EMPTY_MATERIAL_SLOT",
+          "status": "complete",
+          "requested": true,
+          "applicableObjects": 4,
+          "checkedObjects": 4
+        },
+        {
+          "check": "INTERIOR_FACES",
+          "status": "skipped",
+          "requested": false,
+          "applicableObjects": 4,
+          "checkedObjects": 0,
+          "reason": "not requested by this profile or additionalChecks; add interior_faces or run mesh.analyze_quality checks=[\"interior_faces\"]"
+        },
+        {
+          "check": "STEEP_OVERHANGS",
+          "status": "skipped",
+          "requested": false,
+          "applicableObjects": 4,
+          "checkedObjects": 0,
+          "reason": "not requested by this profile or additionalChecks"
+        },
+        {
+          "check": "OBJECT_VERY_SMALL",
+          "status": "skipped",
+          "requested": false,
+          "applicableObjects": 4,
+          "checkedObjects": 0,
+          "reason": "not requested by this profile or additionalChecks"
+        }
+      ],
+      "allChecksRun": false,
+      "zeroAreaFaceThresholdM2": 1e-12,
+      "degenerateEdgeThresholdM": 1e-9,
+      "interiorFacesMethod": "every face edge has more than two face users; not arbitrary volumetric self-intersection"
+    },
+    "checksNotRun": [
+      "NO_UV_LAYERS: not requested by this profile or additionalChecks",
+      "INTERIOR_FACES: not requested by this profile or additionalChecks; add interior_faces or run mesh.analyze_quality checks=[\"interior_faces\"]",
+      "STEEP_OVERHANGS: not requested by this profile or additionalChecks",
+      "OBJECT_VERY_SMALL: not requested by this profile or additionalChecks"
+    ],
+    "passed": true,
+    "issuePassed": true,
+    "validationStatus": "passed",
+    "coverageLimits": [
+      "OBJECTS_INTERSECT: evaluated world-space surface BVH with inward contact offset; fully contained solids without surface crossings are not checked"
+    ]
+  },
+  "usedInFilm": "GLB mesh geometry. Materials, deformation, lighting and final motion are rendered in Remotion / Three.js. No Cycles animation plate is claimed.",
+  "includedComputeOnly": true,
+  "paidGeneration": false
+}

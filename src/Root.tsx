@@ -10,9 +10,11 @@ import { Localization } from "./scenes/Localization";
 import { Finale } from "./scenes/Finale";
 import { FirstRevealRegistrations } from "./first-reveal/Registration";
 import { SignalRegistrations } from "./signal/Registration";
+import { CorrectionRegistrations } from "./signal-correction/Registration";
 
 export const RemotionRoot = () => (
   <>
+    <CorrectionRegistrations />
     <SignalRegistrations />
     <FirstRevealRegistrations />
     <Composition

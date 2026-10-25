@@ -1,0 +1,31 @@
+{
+  "sampleRate": 48000,
+  "frameRate": 60,
+  "cues": [
+    {
+      "cue": "Q012",
+      "interval": [
+        8.4,
+        8.6
+      ],
+      "musicGain": 0.25
+    },
+    {
+      "cue": "Q018",
+      "interval": [
+        13.2,
+        13.4
+      ],
+      "musicAndEffectsGain": 0,
+      "rampSeconds": 0.015
+    },
+    {
+      "cue": "Q031",
+      "interval": [
+        23.2,
+        24
+      ],
+      "action": "Q030 decay only; never double layer"
+    }
+  ]
+}
